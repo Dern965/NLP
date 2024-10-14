@@ -25,6 +25,10 @@ def count_pkl_files(directory='models'):
         return len([f for f in os.listdir(directory) if f.endswith('.pkl')])
     return 0
 
+# Crear carpeta para almacenar los .pkl si no existe
+if not os.path.exists('models'):
+    os.makedirs('models')
+
 # Título de la aplicación
 st.title("Similitud de Documentos - Práctica III")
 
@@ -71,96 +75,40 @@ if uploaded_file is not None:
                 # Definir el rango de n-gramas según la selección
                 ngram_values = (1, 1) if ngram_range == "Unigramas" else (2, 2)
 
-                # Crear carpeta para almacenar los .pkl si no existe
-                if not os.path.exists('models'):
-                    os.makedirs('models')
-
-# Seleccionar el vectorizador adecuado y definir nombre de archivo
-                vector_file_name = os.path.join('models', f'vectorizer_{method}_{ngram_range}.pkl')
-                if os.path.exists(vector_file_name):
-                    # Cargar desde archivo .pkl si ya existe
-                    with open(vector_file_name, 'rb') as vector_file:
-                        st.session_state['vectorized_corpus'] = pickle.load(vector_file)
-                        st.write(f"Vectorización cargada desde {vector_file_name}.")
-                else:
-                    # Crear y guardar nueva vectorización
-                    if method == 'Frecuencia':
-                        vectorizer = CountVectorizer(ngram_range=ngram_values)
-                    elif method == 'Binarizada':
-                        vectorizer = CountVectorizer(binary=True, ngram_range=ngram_values)
-                    elif method == 'TF-IDF':
-                        vectorizer = TfidfVectorizer(ngram_range=ngram_values)
-
-                    # Generar la representación vectorial y guardar en session_state
+                # Crear y guardar vocabulario y representación matricial
+                def save_vector_and_vocab(vectorizer, corpus, feature_name, ngram_type):
+                    # Crear el vectorizador y vectorizar el corpus
                     X = vectorizer.fit_transform(corpus)
-                    st.session_state['vectorized_corpus'] = X
-                    st.session_state['vectorizer'] = vectorizer
-                    st.session_state['feature_names'] = vectorizer.get_feature_names_out()
+                    
+                    # Guardar el vocabulario
+                    vocab_file_name = os.path.join('models', f'vocab_{feature_name}_{ngram_type}_{method}.pkl')
+                    with open(vocab_file_name, 'wb') as vocab_file:
+                        pickle.dump(vectorizer.vocabulary_, vocab_file)
+                    
+                    # Guardar la representación matricial
+                    matrix_file_name = os.path.join('models', f'matrix_{feature_name}_{ngram_type}_{method}.pkl')
+                    with open(matrix_file_name, 'wb') as matrix_file:
+                        pickle.dump(X, matrix_file)
+                    st.write(f"Archivos guardados para {feature_name} con {ngram_type} y {method}:")
+                    st.write(f"Vocabulario: {vocab_file_name}, Matriz: {matrix_file_name}")
 
-                    # Guardar la vectorización en un archivo .pkl
-                    with open(vector_file_name, 'wb') as vector_file:
-                        pickle.dump(X, vector_file)
-                    st.write(f"Vectorización creada y guardada en {vector_file_name}.")
+                # Definir el vectorizador según el método seleccionado
+                if method == 'Frecuencia':
+                    vectorizer = CountVectorizer(ngram_range=ngram_values)
+                elif method == 'Binarizada':
+                    vectorizer = CountVectorizer(binary=True, ngram_range=ngram_values)
+                elif method == 'TF-IDF':
+                    vectorizer = TfidfVectorizer(ngram_range=ngram_values)
+
+                # Guardar para cada característica seleccionada
+                for feature in feature_selection:
+                    if feature == 'Title':
+                        save_vector_and_vocab(vectorizer, df['Title'].fillna('').tolist(), 'Title', ngram_range)
+                    elif feature == 'Content':
+                        save_vector_and_vocab(vectorizer, df['Content'].fillna('').tolist(), 'Content', ngram_range)
+                    elif feature == 'Title + Content':
+                        combined_data = (df['Title'].fillna('') + " " + df['Content'].fillna('')).tolist()
+                        save_vector_and_vocab(vectorizer, combined_data, 'Title_Content', ngram_range)
 
                 # Actualizar el número de archivos .pkl creados
                 st.subheader(f"Archivos .pkl creados en 'models': {count_pkl_files()}")
-
-                st.write("Características extraídas:", st.session_state['feature_names'])
-
-            # Mostrar características extraídas después de la vectorización
-            if st.session_state['vectorized_corpus'] is not None:
-                st.write("Características extraídas:", st.session_state['feature_names'])
-
-            # Ingresar documento de prueba
-            if 'test_doc' not in st.session_state:
-                st.session_state['test_doc'] = ""
-
-            test_option = st.radio("Selecciona cómo ingresar el documento de prueba", ["Escribir texto", "Cargar archivo"])
-            if test_option == "Escribir texto":
-                st.session_state['test_doc'] = st.text_area("Ingresa el documento de prueba", value=st.session_state['test_doc'])
-            elif test_option == "Cargar archivo":
-                test_file = st.file_uploader("Carga el archivo del documento de prueba", type=["txt"])
-                if test_file is not None:
-                    st.session_state['test_doc'] = test_file.read().decode('utf-8')
-
-            # Normalizar y tokenizar el documento de prueba
-            if st.session_state['test_doc']:
-                test_doc_processed = preprocess_text(st.session_state['test_doc'])
-
-            # Calcular Similitud
-            if st.button("Calcular Similitud"):
-                if st.session_state['vectorized_corpus'] is not None and test_doc_processed:
-                    # Vectorizar el documento de prueba
-                    test_vector = st.session_state['vectorizer'].transform([test_doc_processed]).toarray()
-# Verificar si el vector de prueba no es completamente cero
-                    if np.all(test_vector == 0):
-                        st.warning("El documento de prueba no tiene características válidas después de la tokenización y vectorización.")
-                    else:
-                        # Calcular similitud con cada documento del corpus
-                        def cosine_similarity(x, y):
-                            # Calcular el producto punto y las magnitudes
-                            val = sum(x[index] * y[index] for index in range(len(x)))
-                            sr_x = math.sqrt(sum(x_val**2 for x_val in x))
-                            sr_y = math.sqrt(sum(y_val**2 for y_val in y))
-                            # Verificar que las magnitudes no sean cero
-                            if sr_x == 0 or sr_y == 0:
-                                return np.nan
-                            return val / (sr_x * sr_y)
-
-                        similarities = []
-                        for vector in st.session_state['vectorized_corpus'].toarray():
-                            sim = cosine_similarity(test_vector[0], vector)
-                            similarities.append(sim)
-
-                        # Mostrar los 10 documentos más similares
-                        sorted_indices = sorted(range(len(similarities)), key=lambda k: similarities[k] if not np.isnan(similarities[k]) else -1, reverse=True)[:10]
-                        if sorted_indices:
-                            st.subheader("Documentos Más Similares")
-                            for idx in sorted_indices:
-                                st.write(f"Documento {idx + 1}: Similitud = {similarities[idx]}")
-                        else:
-                            st.warning("No se encontraron documentos similares.")
-                else:
-                    st.error("Primero debes ingresar el documento de prueba y generar la representación vectorial del corpus.")
-    else:
-        st.error("El archivo subido no contiene las columnas 'Title' y 'Content'.")
