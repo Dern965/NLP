@@ -4,6 +4,8 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import math
 import numpy as np
 import spacy
+import os
+import pickle
 
 # Cargar el modelo en español de spaCy
 nlp = spacy.load("es_core_news_sm")
@@ -17,8 +19,17 @@ def preprocess_text(text):
     ]
     return " ".join(tokens)
 
+# Función para contar los archivos .pkl en la carpeta 'models'
+def count_pkl_files(directory='models'):
+    if os.path.exists(directory):
+        return len([f for f in os.listdir(directory) if f.endswith('.pkl')])
+    return 0
+
 # Título de la aplicación
 st.title("Similitud de Documentos - Práctica III")
+
+# Mostrar el número de archivos .pkl creados
+st.subheader(f"Archivos .pkl creados en 'models': {count_pkl_files()}")
 
 # Subir archivo del corpus
 uploaded_file = st.file_uploader("Sube el corpus de noticias (CSV)", type=["csv"])
@@ -51,7 +62,7 @@ if uploaded_file is not None:
             # Selección de método de vectorización
             method = st.selectbox("Selecciona el tipo de vectorización", ["Frecuencia", "Binarizada", "TF-IDF"])
 
-            # Vectorizar corpus
+            # Vectorizar corpus con opción de guardar/cargar desde .pkl
             if 'vectorized_corpus' not in st.session_state:
                 st.session_state['vectorized_corpus'] = None
                 st.session_state['vectorizer'] = None
@@ -60,26 +71,45 @@ if uploaded_file is not None:
                 # Definir el rango de n-gramas según la selección
                 ngram_values = (1, 1) if ngram_range == "Unigramas" else (2, 2)
 
-                # Seleccionar el vectorizador adecuado
-                if method == 'Frecuencia':
-                    vectorizer = CountVectorizer(ngram_range=ngram_values)
-                elif method == 'Binarizada':
-                    vectorizer = CountVectorizer(binary=True, ngram_range=ngram_values)
-                elif method == 'TF-IDF':
-                    vectorizer = TfidfVectorizer(ngram_range=ngram_values)
+                # Crear carpeta para almacenar los .pkl si no existe
+                if not os.path.exists('models'):
+                    os.makedirs('models')
 
-                # Generar la representación vectorial y guardar en session_state
-                X = vectorizer.fit_transform(corpus)
-                st.session_state['vectorized_corpus'] = X
-                st.session_state['vectorizer'] = vectorizer
-                st.session_state['feature_names'] = vectorizer.get_feature_names_out()
+# Seleccionar el vectorizador adecuado y definir nombre de archivo
+                vector_file_name = os.path.join('models', f'vectorizer_{method}_{ngram_range}.pkl')
+                if os.path.exists(vector_file_name):
+                    # Cargar desde archivo .pkl si ya existe
+                    with open(vector_file_name, 'rb') as vector_file:
+                        st.session_state['vectorized_corpus'] = pickle.load(vector_file)
+                        st.write(f"Vectorización cargada desde {vector_file_name}.")
+                else:
+                    # Crear y guardar nueva vectorización
+                    if method == 'Frecuencia':
+                        vectorizer = CountVectorizer(ngram_range=ngram_values)
+                    elif method == 'Binarizada':
+                        vectorizer = CountVectorizer(binary=True, ngram_range=ngram_values)
+                    elif method == 'TF-IDF':
+                        vectorizer = TfidfVectorizer(ngram_range=ngram_values)
+
+                    # Generar la representación vectorial y guardar en session_state
+                    X = vectorizer.fit_transform(corpus)
+                    st.session_state['vectorized_corpus'] = X
+                    st.session_state['vectorizer'] = vectorizer
+                    st.session_state['feature_names'] = vectorizer.get_feature_names_out()
+
+                    # Guardar la vectorización en un archivo .pkl
+                    with open(vector_file_name, 'wb') as vector_file:
+                        pickle.dump(X, vector_file)
+                    st.write(f"Vectorización creada y guardada en {vector_file_name}.")
+
+                # Actualizar el número de archivos .pkl creados
+                st.subheader(f"Archivos .pkl creados en 'models': {count_pkl_files()}")
+
                 st.write("Características extraídas:", st.session_state['feature_names'])
-                st.write("Representación vectorial generada.")
 
             # Mostrar características extraídas después de la vectorización
             if st.session_state['vectorized_corpus'] is not None:
                 st.write("Características extraídas:", st.session_state['feature_names'])
-                st.write("Representación vectorial generada.")
 
             # Ingresar documento de prueba
             if 'test_doc' not in st.session_state:
@@ -102,8 +132,7 @@ if uploaded_file is not None:
                 if st.session_state['vectorized_corpus'] is not None and test_doc_processed:
                     # Vectorizar el documento de prueba
                     test_vector = st.session_state['vectorizer'].transform([test_doc_processed]).toarray()
-
-                    # Verificar si el vector de prueba no es completamente cero
+# Verificar si el vector de prueba no es completamente cero
                     if np.all(test_vector == 0):
                         st.warning("El documento de prueba no tiene características válidas después de la tokenización y vectorización.")
                     else:
@@ -133,6 +162,5 @@ if uploaded_file is not None:
                             st.warning("No se encontraron documentos similares.")
                 else:
                     st.error("Primero debes ingresar el documento de prueba y generar la representación vectorial del corpus.")
-
     else:
-        st.error("El archivo subido no tiene las columnas 'Title' y 'Content'.")
+        st.error("El archivo subido no contiene las columnas 'Title' y 'Content'.")
