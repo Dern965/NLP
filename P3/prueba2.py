@@ -7,17 +7,26 @@ import spacy
 import os
 import pickle
 
-# Cargar el modelo en español de spaCy
-nlp = spacy.load("es_core_news_sm")
+# Cargar el modelo en español de spaCy con caché para mejorar el rendimiento
+@st.cache_resource
+def load_spacy_model():
+    return spacy.load("es_core_news_sm")
+
+nlp = load_spacy_model()
+
+stop = {"ADP","AUX","CCONJ","DET","NUM","PART","PRON", "SCONJ"}
 
 # Función para normalizar y tokenizar usando spaCy
 def preprocess_text(text):
+    # Tokenización
     doc = nlp(text)
-    tokens = [
-        token.lemma_ for token in doc
-        if not token.is_stop and not token.is_punct and len(token) > 1
-    ]
-    return " ".join(tokens)
+    normalized_tokens = []
+    for token in doc:
+        # Eliminar tokens según su categoría gramatical
+        if token.pos_ not in stop:
+            # Lematización
+            normalized_tokens.append(token.lemma_)
+    return " ".join(normalized_tokens)
 
 # Función para contar los archivos .pkl en la carpeta 'models'
 def count_pkl_files(directory='models'):
@@ -45,20 +54,24 @@ if uploaded_file is not None:
     # Asegurarse de que el archivo tenga las columnas necesarias
     if 'Title' in df.columns and 'Content' in df.columns:
         # Seleccionar columnas a utilizar
-        feature_selection = st.multiselect("Selecciona los elementos del corpus para analizar", ['Title', 'Content', 'Title + Content'])
-        
+        feature_selection = st.multiselect(
+            "Selecciona los elementos del corpus para analizar",
+            ['Title', 'Content', 'Title + Content']
+        )
+
         if feature_selection:
             # Crear corpus concatenando las columnas seleccionadas y reemplazar NaN con cadenas vacías
             corpus = []
             if 'Title' in feature_selection:
-                corpus.extend(df['Title'].fillna('').tolist())  # Reemplazar NaN con cadenas vacías
+                corpus.extend(df['Title'].fillna('').tolist())
             if 'Content' in feature_selection:
-                corpus.extend(df['Content'].fillna('').tolist())  # Reemplazar NaN con cadenas vacías
+                corpus.extend(df['Content'].fillna('').tolist())
             if 'Title + Content' in feature_selection:
-                corpus.extend((df['Title'].fillna('') + " " + df['Content'].fillna('')).tolist())  # Reemplazar NaN con cadenas vacías
+                corpus.extend((df['Title'].fillna('') + " " + df['Content'].fillna('')).tolist())
 
             # Normalizar y tokenizar el corpus utilizando spaCy
-            corpus = [preprocess_text(doc) for doc in corpus]
+            with st.spinner("Procesando el corpus..."):
+                corpus = [preprocess_text(doc) for doc in corpus]
 
             # Selección de n-gramas
             ngram_range = st.radio("Selecciona el tipo de características", ["Unigramas", "Bigramas"])
@@ -66,101 +79,145 @@ if uploaded_file is not None:
             # Selección de método de vectorización
             method = st.selectbox("Selecciona el tipo de vectorización", ["Frecuencia", "Binarizada", "TF-IDF"])
 
-            # Vectorizar corpus con opción de guardar/cargar desde .pkl
-            if 'vectorized_corpus' not in st.session_state:
-                st.session_state['vectorized_corpus'] = None
-                st.session_state['vectorizer'] = None
+            # Inicializar diccionarios en session_state para almacenar vectores y vectorizadores
+            if 'vectorized_corpus_dict' not in st.session_state:
+                st.session_state['vectorized_corpus_dict'] = {}
+                st.session_state['vectorizers'] = {}
 
             if st.button("Vectorizar Corpus"):
                 # Definir el rango de n-gramas según la selección
                 ngram_values = (1, 1) if ngram_range == "Unigramas" else (2, 2)
 
-                # Crear carpeta para almacenar los .pkl si no existe
-                if not os.path.exists('models'):
-                    os.makedirs('models')
+                # Función para guardar el vectorizador y la matriz
+                def save_vector_and_vocab(vectorizer, corpus_data, feature_name, ngram_type, method_type):
+                    # Crear el vectorizador y vectorizar el corpus
+                    X = vectorizer.fit_transform(corpus_data)
 
-                # Seleccionar el vectorizador adecuado y definir nombre de archivo
-                vector_file_name = os.path.join('models', f'vectorizer_{method}_{ngram_range}.pkl')
-                if os.path.exists(vector_file_name):
-                    # Cargar desde archivo .pkl si ya existe
-                    with open(vector_file_name, 'rb') as vector_file:
-                        st.session_state['vectorized_corpus'] = pickle.load(vector_file)
-                        st.write(f"Vectorización cargada desde {vector_file_name}.")
-                else:
-                    # Crear y guardar nueva vectorización
-                    if method == 'Frecuencia':
-                        vectorizer = CountVectorizer(ngram_range=ngram_values)
-                    elif method == 'Binarizada':
-                        vectorizer = CountVectorizer(binary=True, ngram_range=ngram_values)
-                    elif method == 'TF-IDF':
-                        vectorizer = TfidfVectorizer(ngram_range=ngram_values)
+                    # Guardar el vocabulario
+                    vocab_file_name = os.path.join('models', f'vocab_{feature_name}_{ngram_type}_{method_type}.pkl')
+                    with open(vocab_file_name, 'wb') as vocab_file:
+                        pickle.dump(vectorizer.vocabulary_, vocab_file)
 
-                    # Generar la representación vectorial y guardar en session_state
-                    X = vectorizer.fit_transform(corpus)
-                    st.session_state['vectorized_corpus'] = X
-                    st.session_state['vectorizer'] = vectorizer
-                    st.session_state['feature_names'] = vectorizer.get_feature_names_out()
+                    # Guardar la representación matricial
+                    matrix_file_name = os.path.join('models', f'matrix_{feature_name}_{ngram_type}_{method_type}.pkl')
+                    with open(matrix_file_name, 'wb') as matrix_file:
+                        pickle.dump(X, matrix_file)
 
-                    # Guardar la vectorización en un archivo .pkl
-                    with open(vector_file_name, 'wb') as vector_file:
-                        pickle.dump(X, vector_file)
-                    st.write(f"Vectorización creada y guardada en {vector_file_name}.")
+                    # Actualizar session_state
+                    key = f"{feature_name}_{ngram_type}_{method_type}"
+                    st.session_state['vectorized_corpus_dict'][key] = X
+                    st.session_state['vectorizers'][key] = vectorizer
+
+                    st.success(f"Archivos guardados para {feature_name} con {ngram_type} y {method_type}:")
+                    st.write(f"Vocabulario: {vocab_file_name}, Matriz: {matrix_file_name}")
+
+                # Definir el vectorizador según el método seleccionado
+                if method == 'Frecuencia':
+                    VectorizerClass = CountVectorizer
+                    vectorizer_params = {'ngram_range': ngram_values}
+                elif method == 'Binarizada':
+                    VectorizerClass = CountVectorizer
+                    vectorizer_params = {'binary': True, 'ngram_range': ngram_values}
+                elif method == 'TF-IDF':
+                    VectorizerClass = TfidfVectorizer
+                    vectorizer_params = {'ngram_range': ngram_values}
+
+                # Guardar para cada característica seleccionada
+                for feature in feature_selection:
+                    if feature == 'Title':
+                        data = df['Title'].fillna('').tolist()
+                        feature_name = 'Title'
+                    elif feature == 'Content':
+                        data = df['Content'].fillna('').tolist()
+                        feature_name = 'Content'
+                    elif feature == 'Title + Content':
+                        data = (df['Title'].fillna('') + " " + df['Content'].fillna('')).tolist()
+                        feature_name = 'Title_Content'
+
+                    # Crear y guardar el vectorizador y la matriz
+                    vectorizer = VectorizerClass(**vectorizer_params)
+                    save_vector_and_vocab(vectorizer, data, feature_name, ngram_range, method)
 
                 # Actualizar el número de archivos .pkl creados
                 st.subheader(f"Archivos .pkl creados en 'models': {count_pkl_files()}")
 
-                st.write("Características extraídas:", st.session_state['feature_names'])
+        else:
+            st.warning("Por favor, selecciona al menos una característica para analizar.")
 
-            # Mostrar características extraídas después de la vectorización
-            if st.session_state['vectorized_corpus'] is not None:
-                st.write("Características extraídas:", st.session_state['feature_names'])
+        # Sección de Similitud de Documentos
+        st.header("Cálculo de Similitud entre Documentos")
 
-            # Ingresar documento de prueba
-            test_option = st.radio("Selecciona cómo ingresar el documento de prueba", ["Escribir texto", "Cargar archivo"])
-            if test_option == "Escribir texto":
-                test_doc = st.text_area("Ingresa el documento de prueba")
-            elif test_option == "Cargar archivo":
-                test_file = st.file_uploader("Carga el archivo del documento de prueba", type=["txt"])
-                if test_file is not None:
-                    test_doc = test_file.read().decode('utf-8')
+        # Verificar si existen configuraciones vectorizadas
+        if 'vectorized_corpus_dict' in st.session_state and st.session_state['vectorized_corpus_dict']:
+            # Generar las opciones de configuración disponibles
+            available_configs = list(st.session_state['vectorized_corpus_dict'].keys())
+            similarity_config = st.selectbox(
+                "Selecciona la configuración de vectorización para calcular la similitud",
+                available_configs
+            )
 
-            # Normalizar y tokenizar el documento de prueba
-            if test_doc:
-                test_doc_processed = preprocess_text(test_doc)
+            if similarity_config:
+                # Obtener la matriz vectorizada y el vectorizador correspondiente
+                X_corpus = st.session_state['vectorized_corpus_dict'][similarity_config]
+                vectorizer = st.session_state['vectorizers'][similarity_config]
 
-            # Calcular Similitud
-            if st.button("Calcular Similitud"):
-                if st.session_state['vectorized_corpus'] is not None and test_doc_processed:
-                    # Vectorizar el documento de prueba
-                    test_vector = st.session_state['vectorizer'].transform([test_doc_processed]).toarray()
+                # Ingresar documento de prueba
+                test_option = st.radio("Selecciona cómo ingresar el documento de prueba", ["Escribir texto", "Cargar archivo"])
 
-                    # Verificar si el vector de prueba no es completamente cero
-                    if np.all(test_vector == 0):
-                        st.warning("El documento de prueba no tiene características válidas después de la tokenización y vectorización.")
+                if test_option == "Escribir texto":
+                    test_doc = st.text_area("Ingresa el documento de prueba")
+                elif test_option == "Cargar archivo":
+                    test_file = st.file_uploader("Carga el archivo del documento de prueba", type=["txt"])
+                    if test_file is not None:
+                        test_doc = test_file.read().decode('utf-8')
                     else:
-                        # Calcular similitud con cada documento del corpus
-                        def cosine_similarity(x, y):
-                            val = sum(x[index] * y[index] for index in range(len(x)))
-                            sr_x = math.sqrt(sum(x_val**2 for x_val in x))
-                            sr_y = math.sqrt(sum(y_val**2 for y_val in y))
-                            if sr_x == 0 or sr_y == 0:
-                                return np.nan
-                            return val / (sr_x * sr_y)
+                        test_doc = ""
 
-                        similarities = []
-                        for vector in st.session_state['vectorized_corpus'].toarray():
-                            sim = cosine_similarity(test_vector[0], vector)
-                            similarities.append(sim)
+                # Almacenar el documento de prueba en session_state
+                if 'test_doc' not in st.session_state:
+                    st.session_state['test_doc'] = ""
 
-                        # Mostrar los 10 documentos más similares
-                        sorted_indices = sorted(range(len(similarities)), key=lambda k: similarities[k] if not np.isnan(similarities[k]) else -1, reverse=True)[:10]
-                        if sorted_indices:
-                            st.subheader("Documentos Más Similares")
-                            for idx in sorted_indices:
-                                st.write(f"Documento {idx + 1}: Similitud = {similarities[idx]}")
+                if test_option == "Escribir texto":
+                    st.session_state['test_doc'] = test_doc
+                elif test_option == "Cargar archivo" and test_file is not None:
+                    st.session_state['test_doc'] = test_doc
+
+                # Procesar el documento de prueba
+                if st.session_state['test_doc']:
+                    test_doc_processed = preprocess_text(st.session_state['test_doc'])
+
+                    if st.button("Calcular Similitud"):
+                        if test_doc_processed:
+                            # Vectorizar el documento de prueba
+                            test_vector = vectorizer.transform([test_doc_processed]).toarray()
+
+                            # Verificar si el vector de prueba no es completamente cero
+                            if np.all(test_vector == 0):
+                                st.warning("El documento de prueba no tiene características válidas después de la tokenización y vectorización.")
+                            else:
+                                # Calcular similitud con cada documento del corpus
+                                with st.spinner("Calculando similitudes..."):
+                                    # Utilizar operaciones vectorizadas para eficiencia
+                                    X_corpus_dense = X_corpus.toarray()
+                                    similarities = np.dot(X_corpus_dense, test_vector.T).flatten()
+                                    norms_corpus = np.linalg.norm(X_corpus_dense, axis=1)
+                                    norm_test = np.linalg.norm(test_vector)
+                                    similarities = similarities / (norms_corpus * norm_test)
+                                    similarities = np.nan_to_num(similarities)  # Reemplazar NaN con 0
+
+                                    # Obtener los índices de los 10 documentos más similares
+                                    top_indices = similarities.argsort()[-10:][::-1]
+                                    top_similarities = similarities[top_indices]
+
+                                # Mostrar los 10 documentos más similares
+                                st.subheader("Documentos Más Similares")
+                                for idx, sim in zip(top_indices, top_similarities):
+                                    st.write(f"Documento {idx + 1}: Similitud = {sim:.4f}")
                         else:
-                            st.warning("No se encontraron documentos similares.")
-                else:
-                    st.error("Primero debes ingresar el documento de prueba y generar la representación vectorial del corpus.")
+                            st.error("El documento de prueba no contiene texto válido después del preprocesamiento.")
+        else:
+            st.info("Por favor, vectoriza el corpus primero para habilitar la sección de similitud.")
     else:
-        st.error("El archivo subido no contiene las columnas 'Title' y 'Content'.")
+        st.warning("Por favor, sube un archivo CSV que contenga las columnas 'Title' y 'Content'.")
+else:
+    st.info("Esperando a que subas un archivo CSV para comenzar.")
