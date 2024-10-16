@@ -14,19 +14,25 @@ def load_spacy_model():
 
 nlp = load_spacy_model()
 
-stop = {"ADP","AUX","CCONJ","DET","NUM","PART","PRON", "SCONJ"}
-
-# Función para normalizar y tokenizar usando spaCy
-def preprocess_text(text):
-    # Tokenización
-    doc = nlp(text)
-    normalized_tokens = []
-    for token in doc:
-        # Eliminar tokens según su categoría gramatical
-        if token.pos_ not in stop:
-            # Lematización
-            normalized_tokens.append(token.lemma_)
-    return " ".join(normalized_tokens)
+# Función para normalizar y tokenizar usando spaCy (del notebook)
+def normalizador(corpus: pd.DataFrame, col_name: str, obj_nlp) -> pd.DataFrame:
+    words_category = ["DET", "ADP", "CCONJ", "SCONJ","PRON"]
+    corpus.fillna('', inplace=True)
+    list_col = corpus[col_name].tolist()
+    list_final = []
+    
+    for i in range(len(list_col)):
+        list_to_normal = list_col[i].lower()
+        doc = obj_nlp(list_to_normal)
+        list_normal = []
+        for token in doc:
+            if token.pos_ not in words_category:
+                list_normal.append(token.lemma_)
+        text_norm = ' '.join(list_normal)
+        list_final.append(text_norm)
+    
+    corpus[col_name] = list_final
+    return corpus
 
 # Función para contar los archivos .pkl en la carpeta 'models'
 def count_pkl_files(directory='models'):
@@ -69,9 +75,10 @@ if uploaded_file is not None:
             if 'Title + Content' in feature_selection:
                 corpus.extend((df['Title'].fillna('') + " " + df['Content'].fillna('')).tolist())
 
-            # Normalizar y tokenizar el corpus utilizando spaCy
+            # Normalizar el corpus utilizando la función normalizador
             with st.spinner("Procesando el corpus..."):
-                corpus = [preprocess_text(doc) for doc in corpus]
+                df = normalizador(df, 'Title', nlp)
+                df = normalizador(df, 'Content', nlp)
 
             # Selección de n-gramas
             ngram_range = st.radio("Selecciona el tipo de características", ["Unigramas", "Bigramas"])
@@ -184,7 +191,7 @@ if uploaded_file is not None:
 
                 # Procesar el documento de prueba
                 if st.session_state['test_doc']:
-                    test_doc_processed = preprocess_text(st.session_state['test_doc'])
+                    test_doc_processed = normalizador(pd.DataFrame({'test_doc': [st.session_state['test_doc']]}, index=[0]), 'test_doc', nlp)['test_doc'].iloc[0]
 
                     if st.button("Calcular Similitud"):
                         if test_doc_processed:
