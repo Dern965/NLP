@@ -33,7 +33,7 @@ def seleccion_ruleta(word_list):
     pick = random.uniform(0, total)
     current = 0
     # Añadir un pequeño ajuste aleatorio para palabras con probabilidades similares
-    jitter = 0.01 * total  # Añadir un 1% de variabilidad para evitar selecciones repetitivas
+    jitter = 0.02 * total  # Añadir un 2% de variabilidad para evitar selecciones repetitivas
     pick = min(total, max(0, pick + random.uniform(-jitter, jitter)))
     
     for word, prob in word_list:
