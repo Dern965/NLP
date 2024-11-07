@@ -14,7 +14,7 @@ def load_language_model(file):
         ngram_type = 'bigrams'
     elif trigram_df is not None:
         ngram_type = 'trigrams'
-    generated_sentence = []  # Reset sentence history when a new model is loaded
+    generated_sentence.clear()  # Reset sentence history when a new model is loaded
 
 def load_ngrams(file):
     try:
@@ -42,22 +42,24 @@ def predict_next_words(start_text):
     if not start_text:
         return
 
-    # Add the initial word to the generated sentence if it's the first word
-    if not generated_sentence:
-        generated_sentence.append(start_text)
-        st.session_state['generated_text'] = ' '.join(generated_sentence)
-
-    # Determine n-grams based on input length
+    # Split the input text to handle both bigram and trigram cases
     words = start_text.strip().split()
-    if (ngram_type == 'bigrams' and len(words) != 1) or (ngram_type == 'trigrams' and len(words) != 2):
-        st.warning(f"Please enter {'1 word' if ngram_type == 'bigrams' else '2 words'} to continue.")
+
+    # For bigrams, we require exactly one word; for trigrams, one or two words
+    if (ngram_type == 'bigrams' and len(words) != 1) or (ngram_type == 'trigrams' and len(words) > 2):
+        st.warning(f"Please enter {'1 word' if ngram_type == 'bigrams' else '1 or 2 words'} to continue.")
         return
 
-    # Fetch n-grams based on the selected model type
+    # Fetch n-grams based on the selected model type and current input
     if ngram_type == 'bigrams' and bigram_df is not None:
         ngrams = bigram_df[bigram_df['Term 1'] == words[0]]
     elif ngram_type == 'trigrams' and trigram_df is not None:
-        ngrams = trigram_df[(trigram_df['Term 1'] == words[0]) & (trigram_df['Term 2'] == words[1])]
+        if len(words) == 1:
+            # If only one word is given for trigram, fetch suggestions based on the first word
+            ngrams = trigram_df[trigram_df['Term 1'] == words[0]]
+        else:
+            # If two words are given, fetch based on both words for trigrams
+            ngrams = trigram_df[(trigram_df['Term 1'] == words[0]) & (trigram_df['Term 2'] == words[1])]
     else:
         st.warning("No n-grams found for the given context.")
         return
@@ -73,21 +75,22 @@ def predict_next_words(start_text):
 
     # Update session state with predictions
     st.session_state['predicted_words'] = top_3_words
-
+    
 def add_word(next_word):
     global generated_sentence
     if next_word and next_word != '3 most probable words':
         # If period is selected, complete the sentence
         if next_word == '.':
             generated_sentence.append('.')  # Add period to sentence history
-            st.session_state['generated_text'] = ' '.join(generated_sentence)
         else:
             generated_sentence.append(next_word)  # Add selected word to sentence history
-            st.session_state['generated_text'] = ' '.join(generated_sentence)
-            # Set the new word as the next input in the "Write a word" field
-            st.session_state['start_text_input'] = next_word
-            # Refresh suggestions based on the new input word
+            # Call predict_next_words with the new word without modifying start_text_input directly
             predict_next_words(next_word)
+            # Set the temporary variable to display the next word in the input field
+            st.session_state['temp_input'] = next_word
+
+    # Update the generated text area to show the full sentence
+    st.session_state['generated_text'] += ' '.join(generated_sentence)
 
 st.title("Predictive Text")
 
@@ -95,23 +98,31 @@ st.title("Predictive Text")
 uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
 if uploaded_file:
     load_language_model(uploaded_file)
+    st.success("File uploaded successfully.")
 
-# Initialize session state for text input and generated text
-if 'start_text_input' not in st.session_state:
-    st.session_state['start_text_input'] = ""
-if 'generated_text' not in st.session_state:
-    st.session_state['generated_text'] = ""
+    # Initialize session state for text input and generated text
+    if 'temp_input' not in st.session_state:
+        st.session_state['temp_input'] = ""
+    if 'generated_text' not in st.session_state:
+        st.session_state['generated_text'] = ""
 
-# Input field for the start word
-start_text = st.text_input("Write a word (or two words to start a sentence)", value=st.session_state['start_text_input'])
-if st.button("Next word"):
-    predict_next_words(start_text)
+    # Input field for the start word, with a default value based on temp_input
+    start_text = st.text_input("Write a word (or two words to start a sentence)", value=st.session_state['temp_input'], key="start_text_input")
+    if st.button("Next word"):
+        predict_next_words(start_text)
+        # Add the manually entered word to the generated_sentence if it's not already added
+        if not generated_sentence or generated_sentence[-1] != start_text:
+            generated_sentence.append(start_text)
+        # Update generated text with the new word added
+        st.session_state['generated_text'] = ' '.join(generated_sentence)
+        # Reset temp_input to prevent overwriting in the next run
+        st.session_state['temp_input'] = start_text
 
-# Dropdown for predicted words
-predicted_words = st.session_state.get('predicted_words', ["3 most probable words"])
-next_word = st.selectbox("Choose the next word", options=predicted_words, key="selected_word")
-if st.button("Add word"):
-    add_word(next_word)
+    # Dropdown for predicted words
+    predicted_words = st.session_state.get('predicted_words', ["3 most probable words"])
+    next_word = st.selectbox("Choose the next word", options=predicted_words, key="selected_word")
+    if st.button("Add word"):
+        add_word(next_word)
 
-# Display the generated sentence with the full history
-st.text_area("Generated text", value=st.session_state['generated_text'], height=150)
+    # Display the generated sentence with the full history
+    st.text_area("Generated text", value=st.session_state['generated_text'], height=150)

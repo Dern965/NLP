@@ -43,7 +43,7 @@ def calculate_conditional_probability(n_gram, ngram_type, bigram_df=None, trigra
         context_count = trigram_df[(trigram_df['Term 1'] == term1) & (trigram_df['Term 2'] == term2)]['Frequency of Context (Term 1, Term 2)'].sum()
 
     probability = (ngram_count + 1) / (context_count + vocab_size)
-    return probability
+    return round(probability, 6)
 
 # Function to calculate joint probability
 def calculate_joint_probability(test_sentence, ngram_type, bigram_df=None, trigram_df=None):
