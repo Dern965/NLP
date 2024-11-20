@@ -1,0 +1,9 @@
+Classifier,ML Method Parameters,Text Normalization,Vectorizer,F1-Score
+Logistic Regression,max_iter=200,Tokenization + stopwords + lemmatization,Binarized,0.5683778815169792
+Naive Bayes,default,Tokenization + stopwords + lemmatization,Binarized,0.5787641723356008
+Multilayer Perceptron,"hidden_layer_sizes=(200, 100)",Tokenization + stopwords + lemmatization,Binarized,0.6453647831312975
+Logistic Regression,max_iter=200,Tokenization + stopwords + lemmatization,Frequency,0.6010706851003347
+Naive Bayes,default,Tokenization + stopwords + lemmatization,Frequency,0.5565187590187589
+Multilayer Perceptron,"hidden_layer_sizes=(200, 100)",Tokenization + stopwords + lemmatization,Frequency,0.5901129756129757
+Logistic Regression,max_iter=200,Tokenization + text_cleaning + stopwords + lemmatization,TF-IDF,0.4109963985594237
+Multilayer Perceptron,"hidden_layer_sizes=(200, 100)",Tokenization + text_cleaning + stopwords + lemmatization,TF-IDF,0.5636970058293588
