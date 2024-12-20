@@ -80,7 +80,7 @@ def main():
     options.add_argument('--allow-insecure-localhost')
     driver = webdriver.Chrome(service=service, options=options)
 
-    with open('Proyecto/links.txt', 'r') as file:
+    with open('Proyecto/links2.txt', 'r') as file:
         urls = [line.strip() for line in file]
     
     all_comentarios = []
@@ -91,8 +91,8 @@ def main():
 
     # Guardar en CSV
     df = pd.DataFrame(all_comentarios)
-    df.to_csv('Comentarios_Profesores.csv', index=False, encoding='utf-8')
-    print('Datos guardados en Comentarios_Profesores')
+    df.to_csv('Comentarios_Prueba.csv', index=False, encoding='utf-8')
+    print('Datos guardados en Comentarios_Prueba')
 
 if __name__ == '__main__':
     main()
