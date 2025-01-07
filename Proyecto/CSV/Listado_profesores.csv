@@ -1,457 +1,458 @@
 Nombre del profesor,Departamento,# Calificaciones,Promedio
 ,,0,
-"*A todos los pseudoalumnitos, Aunque me borren seguiréComputación",Computación,63,3.8
-"Adan Sosa, FannySociales",Sociales,15,8.6
-"Aguilar García, RafaelProgramación",Programación,75,7.7
+"*A todos los pseudoalumnitos, Aunque me borren seguiré",Computación,63,3.8
+"Adan Sosa, Fanny",Sociales,15,8.6
+"Aguilar García, Rafael",Programación,75,7.7
 "Aguilar Sanchez, Fernando",,131,8.5
-"Aguilar Velazquez, DanielIA",IA,3,8.0
-"Agustín Dominguez, VeronicaAcademia de Ciencias Sociales",Academia de Ciencias Sociales,25,9.5
-"Agustín Dominguez, VeronicaFundamentos Economicos",Fundamentos Economicos,41,8.4
-"ALBORTANTE MORATO, CECILIADepto. de Ciencias e Ingeniería de la Computación",Depto. de Ciencias e Ingeniería de la Computación,32,8.9
-"Alcantara Mendez, Alberto Jesus",,93,7.8
-"Alcaraz Torres, Juan JesusRedes de Computadoras",Redes de Computadoras,23,7.5
+"Aguilar Velazquez, Daniel",IA,3,8.0
+"Agustín Dominguez, Veronica",Fundamentos Economicos,41,8.4
+"Agustín Dominguez, Veronica",Academia de Ciencias Sociales,25,9.5
+"ALBORTANTE MORATO, CECILIA",Depto. de Ciencias e Ingeniería de la Computación,32,8.9
+"Alcantara Mendez, Alberto Jesus",,94,7.8
+"Alcaraz Torres, Juan Jesus",Redes de Computadoras,23,7.5
 "aldana, Eduardo",,27,5.0
-"Aldape Perez, MarioISC",ISC,24,6.5
-"ALEMAN ARCE, MIGUEL ANGELSistemas/Circuitos",Sistemas/Circuitos,5,8.4
-"alfaro miranda, eduardofisica",fisica,3,4.7
+"Aldape Perez, Mario",ISC,24,6.5
+"ALEMAN ARCE, MIGUEL ANGEL",Sistemas/Circuitos,5,8.4
+"alfaro miranda, eduardo",fisica,3,4.7
 "ALMAZAN FARFAN, ROCIO",,89,7.0
-"Almazan, RocioCircuitos eléctricos",Circuitos eléctricos,0,
-"anaya, NATALIAlcd",lcd,0,
-"ANGELES ALEJANDRA, SANCHEZ MANILLACiencia de Datos",Ciencia de Datos,1,7.0
-"anozir, alonsoesime",esime,0,
-"aragon, maribelciencias sociales",ciencias sociales,48,6.3
-"Arango Leon, MoisesEcuaciones Diferenciales",Ecuaciones Diferenciales,2,2.5
-"araujo diaz, davidsistemas",sistemas,32,7.6
-"Arcos Díaz, Elsa LeticiaESCOM Matemáticas Discretas",ESCOM Matemáticas Discretas,14,6.1
-"Arzate Gordillo, JaquelineSistemas Digitales",Sistemas Digitales,74,8.2
-"avalos hernandez, robertosec 29 mixta",sec 29 mixta,0,
-"Avila Sanches, Cristhian AlejandroISC",ISC,26,7.0
-"Barranco Jimenez, Marco AntonioCiencias Básicas",Ciencias Básicas,108,6.9
-"Barrera Martínez, Luis FernandoESCOM",ESCOM,0,
-"Barrios Alvarado, Daniel AlejandroCELEX ESCOM",CELEX ESCOM,1,7.0
-"Barrios, DanielCELEX ESCOM",CELEX ESCOM,5,8.4
-"Barron Hernandez, RicardoBASICAS",BASICAS,17,4.7
-"barron vera, josuesistemas digitales",sistemas digitales,13,6.6
-"Bautista Rosales, Sandra IvetteRedes",Redes,53,4.9
-"Baños Santander, FredyMachine Learning",Machine Learning,5,3.0
-"Benítez, Ana KarenCELEX",CELEX,7,8.6
-"Blanco Almazan, Ivan EduardoESCOM",ESCOM,19,8.2
-"Blaz, AnaliliaCierra",Cierra,0,
-"botello castillo, alejandrosistemas",sistemas,69,6.4
-"BUITRON DAMASO, ISRAELBásicas",Básicas,126,5.6
-"Bustos Farias, EduardoSociales",Sociales,11,8.3
-"Cabrera Chavez, Gloria LourdesFundamentos Economicos",Fundamentos Economicos,35,8.3
-"Calderon Osorno, Jose LuisCircuitos",Circuitos,11,8.5
-"Calderon Sambarino, Maria JuliaSistemas",Sistemas,24,8.7
-"CAMACHO VAZQUEZ, VANESSA ALEJANDRAIA",IA,6,6.2
-"camacho, ivanoptpmetria",optpmetria,0,
-"camacho, ivanwilfrdo masiu",wilfrdo masiu,0,
-"cancino calderon, SergioSISTEMAS ELECTRONICOS",SISTEMAS ELECTRONICOS,50,8.0
-"Cancino, Odette BereniceLaboratorios",Laboratorios,20,4.3
-"Cano Conde, MexiqueCelex - Escom",Celex - Escom,1,10.0
-"Carballo Jimenez, Juan ManuelMatemáticas",Matemáticas,103,8.7
-"carballo jimenez, juan manuelciencias basicas",ciencias basicas,0,
-"Carmona, EnriqueProgramacion",Programacion,6,7.2
-"Carranza, OscarCircuitos/Electronica",Circuitos/Electronica,33,9.3
-"Carrera Benjamin, BenjaminFísica",Física,3,6.3
-"Carreto Arellano, Chadwicksistemas",sistemas,60,8.7
-"Carvajal Gamez, Blanca EstherSEPI",SEPI,1,2.0
-"CASTILLO CABRERA, GELACIOSISTEMAS ELECTRONICOS",SISTEMAS ELECTRONICOS,45,6.2
-"Castillo Marrufo, Juan AntonioSistemas",Sistemas,49,8.2
-"Catalan Salgado, Edgar ArmandoSistemas",Sistemas,28,5.1
-"Cañedo Suárez, LeticiaBásicas",Básicas,84,8.1
-"Ceballos Sebastian, Ricardobasicas",basicas,51,6.4
-"Ceballos Sebastian, RicardoCiencias Básicas",Ciencias Básicas,17,6.2
-"Celex, PacoEscom",Escom,2,2.0
-"CELIS DOMINGUEZ, ADRIANA BERENICESOCIALES",SOCIALES,101,6.9
-"Centeno Arrazola, Maria SoledadSociales",Sociales,3,8.0
-"Cervantea de Anda, IsmaelElectrónica",Electrónica,29,8.9
-"Cervantes de Anda, IsmaelElectronica",Electronica,39,8.5
-"Cervantes Espinoza, Luis MoctezumaBásicas",Básicas,46,7.5
-"Cervantes prieto, JorgeDocente",Docente,0,
-"Charnicoff, alancic",cic,4,6.8
-"Chavarria Baez, LorenaIPN ESCOM",IPN ESCOM,67,6.0
-"Chavarria, LorenaBaez",Baez,19,5.3
-"Chavez Lima, EduardoCiencias Básicas",Ciencias Básicas,62,6.7
-"Cifuentes Alvarez, Aljeandro SigfridoSistemas",Sistemas,48,5.5
-"Colin Bahena, Dora AlbaMatemáticas",Matemáticas,2,9.0
-"Colin Hernández, NéstorCiencias Básicas",Ciencias Básicas,11,9.5
-"Colin Hernández, NéstorCálculo Aplicado",Cálculo Aplicado,0,
-"Consuelo Varinia, Garcia MendozaSistemas",Sistemas,33,7.6
-"Contratacion, EnTodos",Todos,1,9.0
+"Almazan, Rocio",Circuitos eléctricos,0,
+"anaya, NATALIA",lcd,0,
+"ANGELES ALEJANDRA, SANCHEZ MANILLA",Ciencia de Datos,1,7.0
+"anozir, alonso",esime,0,
+"aragon, maribel",ciencias sociales,48,6.3
+"Arango Leon, Moises",Ecuaciones Diferenciales,2,2.5
+"araujo diaz, david",sistemas,32,7.6
+"Arcos Díaz, Elsa Leticia",ESCOM Matemáticas Discretas,14,6.1
+"Arzate Gordillo, Jaqueline",Sistemas Digitales,74,8.2
+"avalos hernandez, roberto",sec 29 mixta,0,
+"Avila Sanches, Cristhian Alejandro",ISC,26,7.0
+"Barranco Jimenez, Marco Antonio",Ciencias Básicas,108,6.9
+"Barrera Martínez, Luis Fernando",ESCOM,0,
+"Barrios Alvarado, Daniel Alejandro",CELEX ESCOM,1,7.0
+"Barrios, Daniel",CELEX ESCOM,5,8.4
+"Barron Hernandez, Ricardo",BASICAS,17,4.7
+"barron vera, josue",sistemas digitales,13,6.6
+"Bautista Rosales, Sandra Ivette",Redes,53,4.9
+"Baños Santander, Fredy",Machine Learning,5,3.0
+"Benítez, Ana Karen",CELEX,7,8.6
+"Blanco Almazan, Ivan Eduardo",ESCOM,19,8.2
+"Blaz, Analilia",Cierra,0,
+"botello castillo, alejandro",sistemas,69,6.4
+"BUITRON DAMASO, ISRAEL",Básicas,126,5.6
+"Bustos Farias, Eduardo",Sociales,11,8.3
+"Cabrera Chavez, Gloria Lourdes",Fundamentos Economicos,35,8.3
+"Calderon Osorno, Jose Luis",Circuitos,11,8.5
+"Calderon Sambarino, Maria Julia",Sistemas,24,8.7
+"CAMACHO VAZQUEZ, VANESSA ALEJANDRA",IA,6,6.2
+"camacho, ivan",wilfrdo masiu,0,
+"camacho, ivan",optpmetria,0,
+"cancino calderon, Sergio",SISTEMAS ELECTRONICOS,50,8.0
+"Cancino, Odette Berenice",Laboratorios,20,4.3
+"Cano Conde, Mexique",Celex - Escom,1,10.0
+"carballo jimenez, juan manuel",ciencias basicas,0,
+"Carballo Jimenez, Juan Manuel",Matemáticas,103,8.7
+"Carmona, Enrique",Programacion,6,7.2
+"Carranza, Oscar",Circuitos/Electronica,33,9.3
+"Carrera Benjamin, Benjamin",Física,3,6.3
+"Carreto Arellano, Chadwick",sistemas,60,8.7
+"Carvajal Gamez, Blanca Esther",SEPI,1,2.0
+"CASTILLO CABRERA, GELACIO",SISTEMAS ELECTRONICOS,45,6.2
+"Castillo Marrufo, Juan Antonio",Sistemas,49,8.2
+"Catalan Salgado, Edgar Armando",Sistemas,28,5.1
+"Cañedo Suárez, Leticia",Básicas,84,8.1
+"Ceballos Sebastian, Ricardo",Ciencias Básicas,17,6.2
+"Ceballos Sebastian, Ricardo",basicas,51,6.4
+"Celex, Paco",Escom,2,2.0
+"CELIS DOMINGUEZ, ADRIANA BERENICE",SOCIALES,101,6.9
+"Centeno Arrazola, Maria Soledad",Sociales,3,8.0
+"Cervantea de Anda, Ismael",Electrónica,29,8.9
+"Cervantes de Anda, Ismael",Electronica,39,8.5
+"Cervantes Espinoza, Luis Moctezuma",Básicas,46,7.5
+"Cervantes prieto, Jorge",Docente,0,
+"Charnicoff, alan",cic,4,6.8
+"Chavarria Baez, Lorena",IPN ESCOM,67,6.0
+"Chavarria, Lorena",Baez,19,5.3
+"Chavez Lima, Eduardo",Ciencias Básicas,62,6.7
+"Cifuentes Alvarez, Aljeandro Sigfrido",Sistemas,48,5.5
+"Colin Bahena, Dora Alba",Matemáticas,2,9.0
+"Colin Hernández, Néstor",Ciencias Básicas,11,9.5
+"Colin Hernández, Néstor",Cálculo Aplicado,0,
+"Consuelo Varinia, Garcia Mendoza",Sistemas,33,7.6
+"Contratacion, En",Todos,1,9.0
 "CORDERO LOPEZ, MARTHA ROSA",,44,6.4
-"Corona Bermúdez, UrielCiencia de datos",Ciencia de datos,7,9.4
-"CORONILLA, UKRANIOCONTRERAS",CONTRERAS,55,6.6
-"Correa Coyac, DavidBásicas",Básicas,1,8.0
-"Cortes Duarte, Nidia AsuncionISC",ISC,122,7.0
-"Cortes Galicia, JorgeSistemas",Sistemas,66,9.5
-"Cruz Carlin, EfrenSistemas",Sistemas,7,8.7
-"cruz garcia, danielSistemas",Sistemas,69,5.4
-"Cruz Lázaro, Apolinar FranciscoCiencias Sociales",Ciencias Sociales,9,8.6
+"Corona Bermúdez, Uriel",Ciencia de datos,7,9.4
+"CORONILLA, UKRANIO",CONTRERAS,55,6.6
+"Correa Coyac, David",Básicas,1,8.0
+"Cortes Duarte, Nidia Asuncion",ISC,122,7.0
+"Cortes Galicia, Jorge",Sistemas,66,9.5
+"Cruz Carlin, Efren",Sistemas,7,8.7
+"cruz garcia, daniel",Sistemas,69,5.4
+"Cruz Lázaro, Apolinar Francisco",Ciencias Sociales,9,8.6
 "Cruz Meza, Maria Elena",,19,6.0
-"Cruz Rojas, Jorger AlbertoBasicas",Basicas,24,5.5
-"Cruz Torres, BenjamínISC",ISC,25,6.6
-"Cueto, RamónPucmm",Pucmm,0,
+"Cruz Rojas, Jorger Alberto",Basicas,24,5.5
+"Cruz Torres, Benjamín",ISC,25,6.6
+"Cueto, Ramón",Pucmm,0,
 "Cuevas, Alma Delia",,11,4.4
-"DAMIÁN ALMANZAR, DANIEL ISAACBASICAS",BASICAS,1,10.0
-"Davalos, Jose CarlosProgramacion",Programacion,58,8.1
+"DAMIÁN ALMANZAR, DANIEL ISAAC",BASICAS,1,10.0
+"Davalos, Jose Carlos",Programacion,58,8.1
 "De la O Torres, Saul",,62,7.4
-"De león Verdugo, Miguel ÁngelCELEX-ESCOM",CELEX-ESCOM,12,9.3
-"De Luna Caballero, RobertoSistemas",Sistemas,55,2.9
-"de luna caballero, robertosistemas computacionales",sistemas computacionales,0,
-"Diaz de Santiago, Ricardo FelipeCiencias e Ingeniería de la Computación",Ciencias e Ingeniería de la Computación,24,7.2
-"DIAZ HUERTA, claudia celiaaplicado",aplicado,89,8.0
+"De león Verdugo, Miguel Ángel",CELEX-ESCOM,12,9.3
+"De Luna Caballero, Roberto",Sistemas,55,2.9
+"de luna caballero, roberto",sistemas computacionales,0,
+"Diaz de Santiago, Ricardo Felipe",Ciencias e Ingeniería de la Computación,24,7.2
+"DIAZ HUERTA, claudia celia",aplicado,89,8.0
 "diaz infante, felipe",,0,
-"DIAZ TOALA, IVANSISTEMAS",SISTEMAS,57,8.5
-"Dominguez Hernandez, SamuelMatemáticas",Matemáticas,1,8.0
-"Dominguez, Tatiana NayeliBásicas",Básicas,12,6.5
-"Donantes Jisela, ClaudiaCalculo",Calculo,1,4.0
-"Dorantes Fuentes, Claudia JiselaIngeniería en sistemas computacionales",Ingeniería en sistemas computacionales,0,
-"DORANTES GONZALEZ, MARCO ANTONIOFISICA MATEMATICAS COMPUTO",FISICA MATEMATICAS COMPUTO,42,7.2
-"Dorantes Villa, Claudia JiselaESCOM",ESCOM,4,7.3
-"Dorantes Villa, Claudia JiselaCiencias Básicas",Ciencias Básicas,88,6.5
-"Duran Ledezma, Adalberto AngelBasicas",Basicas,59,5.1
-"DURAN LEDEZMA, ANGEL ADALBERTOMatemáticas avanzadas para la ingeniería",Matemáticas avanzadas para la ingeniería,1,4.0
-"Durán Camarillo, Edmundo RenéElectrónica",Electrónica,62,6.2
-"Díaz, SandraSantiago",Santiago,38,8.4
-"Enriquez Zarate, Jose AsuncionWeb",Web,46,8.2
-"Escajadillo Peña, RaúlMatemáticas Avanzadas",Matemáticas Avanzadas,2,10.0
-"Escamilla Miranda, PatriciaJefa de la Unidad Politécnica de Integración Socia",Jefa de la Unidad Politécnica de Integración Socia,15,7.7
-"Escom, *AcosadoresTodos",Todos,2,8.0
-"Esparza Salinas, Rocío-",-,3,7.0
-"Esquivel Centeno, ArmandoMatemáticas",Matemáticas,84,8.3
-"ESTRADA ELIZALDE, SERAFINFUNDAMENTOS ECONOMICOS",FUNDAMENTOS ECONOMICOS,43,6.7
-"fdsfs, fsdfsdfdsfs",fdsfs,0,
-"FERNANDEZ BRETON, DAVID JOSEBásicas",Básicas,2,8.0
-"FERNANDEZ VAZQUEZ, ALFONSOTeoría de Comunicaciones y Señales",Teoría de Comunicaciones y Señales,14,7.2
-"Fernández Bretón, DavidMatemáticas",Matemáticas,3,8.3
-"Ferrer Tenorio, JorgeCiencias Sociales",Ciencias Sociales,39,7.5
+"DIAZ TOALA, IVAN",SISTEMAS,57,8.5
+"Dominguez Hernandez, Samuel",Matemáticas,1,8.0
+"Dominguez, Tatiana Nayeli",Básicas,12,6.5
+"Donantes Jisela, Claudia",Calculo,1,4.0
+"Dorantes Fuentes, Claudia Jisela",Ingeniería en sistemas computacionales,0,
+"DORANTES GONZALEZ, MARCO ANTONIO",FISICA MATEMATICAS COMPUTO,42,7.2
+"Dorantes Villa, Claudia Jisela",Ciencias Básicas,88,6.5
+"Dorantes Villa, Claudia Jisela",ESCOM,4,7.3
+"Duran Ledezma, Adalberto Angel",Basicas,59,5.1
+"DURAN LEDEZMA, ANGEL ADALBERTO",Matemáticas avanzadas para la ingeniería,1,4.0
+"Durán Camarillo, Edmundo René",Electrónica,62,6.2
+"Díaz, Sandra",Santiago,38,8.4
+"Enriquez Zarate, Jose Asuncion",Web,46,8.2
+"Escajadillo Peña, Raúl",Matemáticas Avanzadas,2,10.0
+"Escamilla Miranda, Patricia",Jefa de la Unidad Politécnica de Integración Socia,15,7.7
+"Escom, *Acosadores",Todos,2,8.0
+"Esparza Salinas, Rocío",-,3,7.0
+"Esquivel Centeno, Armando",Matemáticas,84,8.3
+"ESTRADA ELIZALDE, SERAFIN",FUNDAMENTOS ECONOMICOS,43,6.7
+"fdsfs, fsdfsd",fdsfs,0,
+"FERNANDEZ BRETON, DAVID JOSE",Básicas,2,8.0
+"FERNANDEZ VAZQUEZ, ALFONSO",Teoría de Comunicaciones y Señales,14,7.2
+"Fernández Bretón, David",Matemáticas,3,8.3
+"Ferrer Tenorio, Jorge",Ciencias Sociales,39,7.5
 "Figueroa del Prado, Felipe de Jesus",,49,7.0
-"Fish, PaulinaElectivas",Electivas,11,7.2
-"Flores Carapia, RolandoInteligencia Artificial",Inteligencia Artificial,12,5.9
-"FLORES DELGADO, RaquelCiencias Sociales",Ciencias Sociales,34,6.4
-"Flores Escobar, Jose AntonioSistemas",Sistemas,3,7.3
-"FLORES ESTRADA, ITURIEL ENRIQUEESCOM",ESCOM,2,9.5
-"FLORES FUENTES, NARIA ADRIANABASICAS",BASICAS,64,9.1
-"Flores Mendoza, YaxkinESCOM",ESCOM,82,5.8
-"FLORES MERAZ, YESICA SONIABasicas",Basicas,12,6.8
-"Flores, IturielSistemas",Sistemas,4,8.3
-"Florez Meraz, Yessica SoniaBasicas",Basicas,4,7.3
-"Franco Martínez, Edgardo AdriánCiencias e Ingeniería de la Computación",Ciencias e Ingeniería de la Computación,220,8.5
-"Galenana Chávez, María del RosarioBases de Datos",Bases de Datos,8,9.3
-"Galicia Mejia, Rubendiseño digital",diseño digital,60,6.2
-"Galindo Duran, Cristal KarinaEscuela Superior de Computo",Escuela Superior de Computo,6,7.0
-"Galiñanes Rodriguez, Maria GabrielaSociales",Sociales,32,7.1
-"Gambino reyes, DiegoRicardo castro",Ricardo castro,0,
-"Garcia Blanquel, ClaudiaBasicas",Basicas,13,6.1
-"Garcia Mendoza, Consuelo VariniaSistemas",Sistemas,7,8.1
-"Garcia Ortega, Victor HugoIngenieria de sistemas",Ingenieria de sistemas,57,9.1
-"Garcia, Jose AntonioCIC",CIC,8,6.3
-"Garcia, Juan VicenteSalas",Salas,63,7.7
-"García Floriano, AndresIA",IA,6,10.0
-"García Salas, HoracioTecnologías de Lenguaje Natural",Tecnologías de Lenguaje Natural,17,3.2
-"García Sales, Juan VicenteFundamentos de la programación",Fundamentos de la programación,0,
-"Gaspar, FabiánMedina",Medina,11,8.7
-"Godoy Calderon, SalvadorCIC-Inteligencia Artificial",CIC-Inteligencia Artificial,9,9.2
-"Gomez Mayorga, Margarita ElizabethSistemas",Sistemas,44,4.3
-"Gomez Navarro, Dante VirgilioMatematicas",Matematicas,7,6.4
-"Gonzales Trujillo, MiguelMatematicas",Matematicas,68,6.9
+"Fish, Paulina",Electivas,11,7.2
+"Flores Carapia, Rolando",Inteligencia Artificial,12,5.9
+"FLORES DELGADO, Raquel",Ciencias Sociales,34,6.4
+"Flores Escobar, Jose Antonio",Sistemas,3,7.3
+"FLORES ESTRADA, ITURIEL ENRIQUE",ESCOM,2,9.5
+"FLORES FUENTES, NARIA ADRIANA",BASICAS,64,9.1
+"Flores Mendoza, Yaxkin",ESCOM,82,5.8
+"FLORES MERAZ, YESICA SONIA",Basicas,12,6.8
+"Flores, Ituriel",Sistemas,4,8.3
+"Florez Meraz, Yessica Sonia",Basicas,4,7.3
+"Franco Martínez, Edgardo Adrián",Ciencias e Ingeniería de la Computación,220,8.5
+"Galenana Chávez, María del Rosario",Bases de Datos,8,9.3
+"Galicia Mejia, Ruben",diseño digital,60,6.2
+"Galindo Duran, Cristal Karina",Escuela Superior de Computo,6,7.0
+"Galiñanes Rodriguez, Maria Gabriela",Sociales,32,7.1
+"Gambino reyes, Diego",Ricardo castro,0,
+"Garcia Blanquel, Claudia",Basicas,13,6.1
+"Garcia Mendoza, Consuelo Varinia",Sistemas,7,8.1
+"Garcia Ortega, Victor Hugo",Ingenieria de sistemas,57,9.1
+"Garcia, Jose Antonio",CIC,8,6.3
+"Garcia, Juan Vicente",Salas,63,7.7
+"García Floriano, Andres",IA,6,10.0
+"García Salas, Horacio",Tecnologías de Lenguaje Natural,18,3.2
+"García Sales, Juan Vicente",Fundamentos de la programación,0,
+"Gaspar, Fabián",Medina,11,8.7
+"Godoy Calderon, Salvador",CIC-Inteligencia Artificial,9,9.2
+"Gomez Mayorga, Margarita Elizabeth",Sistemas,44,4.3
+"Gomez Navarro, Dante Virgilio",Matematicas,7,6.4
+"Gonzales Trujillo, Miguel",Matematicas,68,6.9
 "GONZALEZ ALBARRAN, GISELA",,30,8.1
-"Gonzalez Castellanos, Wendy BereniceTaller de Teatro",Taller de Teatro,2,5.5
-"Gonzalez Castillo, Jesus RobertoCiencias basicas",Ciencias basicas,5,9.6
-"GONZALEZ RAMIREZ, MARKO ALFONSOIngeniería de software",Ingeniería de software,16,7.3
-"González Cisneros, AlejandroMatemáticas",Matemáticas,74,6.0
-"González García, GustavoComputación",Computación,30,7.4
-"GORDILLO PEREZ, IVANSISTEMAS",SISTEMAS,13,5.8
-"Gracia, Antonio GustaboElectronica",Electronica,4,5.0
-"Gutierrez Aldana, EduardoRedes",Redes,46,6.8
-"GUTIERREZ GARCIA, JUAN JESUSProgramacion",Programacion,13,6.7
-"Gutierrez Mejia, DarwinEcuaciones Diferenciales",Ecuaciones Diferenciales,76,9.0
-"GUTIERREZ MEJIA, DARWINMatemáticas Discretas",Matemáticas Discretas,22,8.5
-"Gutiérrez Aldana, AlfonsoCircuitos/Electrónica",Circuitos/Electrónica,5,8.4
-"Gutiérrez, Juan JesúsDCIC",DCIC,15,8.9
-"GUZMAN AGUILAR, FLORENCIOBASICAS",BASICAS,42,7.8
+"Gonzalez Castellanos, Wendy Berenice",Taller de Teatro,2,5.5
+"Gonzalez Castillo, Jesus Roberto",Ciencias basicas,5,9.6
+"GONZALEZ RAMIREZ, MARKO ALFONSO",Ingeniería de software,16,7.3
+"González Cisneros, Alejandro",Matemáticas,74,6.0
+"González García, Gustavo",Computación,30,7.4
+"GORDILLO PEREZ, IVAN",SISTEMAS,13,5.8
+"Gracia, Antonio Gustabo",Electronica,4,5.0
+"Gutierrez Aldana, Eduardo",Redes,46,6.8
+"GUTIERREZ GARCIA, JUAN JESUS",Programacion,13,6.7
+"Gutierrez Mejia, Darwin",Ecuaciones Diferenciales,76,9.0
+"GUTIERREZ MEJIA, DARWIN",Matemáticas Discretas,22,8.5
+"Gutiérrez Aldana, Alfonso",Circuitos/Electrónica,5,8.4
+"Gutiérrez, Juan Jesús",DCIC,15,8.9
+"GUZMAN AGUILAR, FLORENCIO",BASICAS,42,7.8
 "GUZMÁN FLORES, JESSIE PAULINA",,43,6.1
 "Guzmán Rentería, César Saul",,2,4.0
-"Gómez Tress, MarianaCiencias sociales",Ciencias sociales,6,10.0
-"Henestrosa Carrasco, LeticiaESCOM",ESCOM,39,8.2
-"HERNANDEZ AGUILAR, JOSE LUISELECTRONICA",ELECTRONICA,59,7.3
-"HERNANDEZ BOCANEGRA, JUAN CARLOSMatematicas",Matematicas,6,3.7
+"Gómez Tress, Mariana",Ciencias sociales,6,10.0
+"Henestrosa Carrasco, Leticia",ESCOM,39,8.2
+"HERNANDEZ AGUILAR, JOSE LUIS",ELECTRONICA,59,7.3
+"HERNANDEZ BOCANEGRA, JUAN CARLOS",Matematicas,6,3.7
 "HERNANDEZ CONTRERAS, EULER",,67,7.6
-"Hernandez Garcia, Rosa AlbaISC",ISC,20,9.5
-"hernandez jaime, josefinafinanzas",finanzas,86,8.9
-"Hernandez Olvera, Luis EnriqueSistemas",Sistemas,50,6.9
-"Hernandez Rubio, ErickaProgramacion",Programacion,49,6.7
-"HERNANDEZ VASQUEZ, CESARÁrea Básica",Área Básica,27,8.1
-"Hernandez Vazquez, CesarMecanica y electromagnetismo",Mecanica y electromagnetismo,0,
-"Hernandez Vazquez, CesarCiencias Basicas",Ciencias Basicas,8,8.6
-"Hernandez, MacarioCruz",Cruz,39,7.1
-"Hernandez, VeronicaPrimaria",Primaria,0,
-"Hernández Avilés, Fernando DanteWeb Security",Web Security,25,5.0
-"Hernández Castellanos, César UrielBasicas",Basicas,6,4.3
-"Hernández Gómez, Alberto LuisPrepa 5",Prepa 5,0,
-"Hernández López, Angélica CarolinaCELEX ESCOM",CELEX ESCOM,2,9.5
-"Hernández Secundino, José Celestino EliasAcademia de Sistemas Digitales",Academia de Sistemas Digitales,12,7.5
-"HERRERA DELGADO, LIZBETH BERENICESociales",Sociales,1,10.0
-"Herrera Salgado, EphrainSistemas",Sistemas,12,6.8
-"HERRERA YAÑEZ, CRISPINMatematicas discretas",Matematicas discretas,73,5.8
-"Higuita Borja, Daniel FernandoMatemáticas",Matemáticas,13,3.8
-"Higuita Borja, Daniel FernandoFisica",Fisica,3,4.3
+"Hernandez Garcia, Rosa Alba",ISC,20,9.5
+"hernandez jaime, josefina",finanzas,86,8.9
+"Hernandez Olvera, Luis Enrique",Sistemas,50,6.9
+"Hernandez Rubio, Ericka",Programacion,49,6.7
+"HERNANDEZ VASQUEZ, CESAR",Área Básica,27,8.1
+"Hernandez Vazquez, Cesar",Ciencias Basicas,8,8.6
+"Hernandez Vazquez, Cesar",Mecanica y electromagnetismo,0,
+"Hernandez, Macario",Cruz,39,7.1
+"Hernandez, Veronica",Primaria,0,
+"Hernández Avilés, Fernando Dante",Web Security,25,5.0
+"Hernández Castellanos, César Uriel",Basicas,6,4.3
+"Hernández Gómez, Alberto Luis",Prepa 5,0,
+"Hernández López, Angélica Carolina",CELEX ESCOM,2,9.5
+"Hernández Secundino, José Celestino Elias",Academia de Sistemas Digitales,12,7.5
+"HERRERA DELGADO, LIZBETH BERENICE",Sociales,1,10.0
+"Herrera Salgado, Ephrain",Sistemas,12,6.8
+"HERRERA YAÑEZ, CRISPIN",Matematicas discretas,73,5.8
+"Higuita Borja, Daniel Fernando",Fisica,3,4.3
+"Higuita Borja, Daniel Fernando",Matemáticas,13,3.8
+"Hurtado Aviles, Gabriel",Aplicaciones Moviles Nativas,1,4.0
 "Jimenez Benitez, Jose Alfredo",,53,8.0
 "JIMENEZ CONTRERAS, EDITH ADRIANA",,63,5.2
-"Jimenez Ruiz, René BaltazarSistemas Digitales",Sistemas Digitales,41,6.3
-"Jimenez Villanueva, Martha PatriciaCiencias Básicas",Ciencias Básicas,62,6.1
+"Jimenez Ruiz, René Baltazar",Sistemas Digitales,41,6.3
+"Jimenez Villanueva, Martha Patricia",Ciencias Básicas,62,6.1
 "Jimenez, Jose Alfredo",,1,6.0
-"Jiménez Galán, Yasmín IvetteDesarrollo de sistemas",Desarrollo de sistemas,68,7.8
-"Jiménez Rodríguez, Luis MartinCiencias e Ingeniería de la Computación",Ciencias e Ingeniería de la Computación,1,10.0
-"Juarez Gambino, Joel OmarIngenieria en Sistemas",Ingenieria en Sistemas,63,8.7
-"Juarez Martinez, GenaroProgramacion",Programacion,51,6.9
-"Juarez Mendez, Ana BelemSistemas",Sistemas,27,8.7
-"Juarez Ramirez, Jazmin AdrianaBASICAS",BASICAS,76,8.8
-"JURADO JIMENEZ, ROBERTOBASICAS",BASICAS,164,6.0
-"Jurado, RobertoCalculo",Calculo,0,
-"Juárez León, CarlosCochipuerco",Cochipuerco,100,4.4
+"Jiménez Galán, Yasmín Ivette",Desarrollo de sistemas,68,7.8
+"Jiménez Rodríguez, Luis Martin",Ciencias e Ingeniería de la Computación,1,10.0
+"Juarez Gambino, Joel Omar",Ingenieria en Sistemas,63,8.7
+"Juarez Martinez, Genaro",Programacion,51,6.9
+"Juarez Mendez, Ana Belem",Sistemas,27,8.7
+"Juarez Ramirez, Jazmin Adriana",BASICAS,76,8.8
+"JURADO JIMENEZ, ROBERTO",BASICAS,164,6.0
+"Jurado, Roberto",Calculo,0,
+"Juárez León, Carlos",Cochipuerco,100,4.4
 "Koleniskova, Olga",,8,9.9
-"Kolesnikova, OlgaBASICAS",BASICAS,46,9.7
-"lares, araceliramiro arrieta herrera",ramiro arrieta herrera,0,
-"Lares, Isidra AraceliPrimaria Profr. Ramiro Arrieta Herrera",Primaria Profr. Ramiro Arrieta Herrera,1,10.0
-"Lazcano Xoxotla, LauraCiencias sociales",Ciencias sociales,3,10.0
-"Lazcano Xoxotla, Laurasociales",sociales,49,6.8
-"Leal Pacheco, ReneMatemáticas",Matemáticas,1,10.0
-"LEDEZMA, ADALBERTOBASICAS",BASICAS,4,4.5
-"Leon Hernandez, Miguel Abel (mandrake)vectorial",vectorial,4,5.5
-"Levario Medina, SergioMatematicas",Matematicas,14,7.6
-"León Hernández, Miguel AbelCiencias Basicas",Ciencias Basicas,78,7.1
-"Linares Vallejo, Erick EugenioISC",ISC,61,6.2
-"LOPEZ LEIVA, lUIS OCTAVIOELECTRONICA",ELECTRONICA,33,7.0
-"LOPEZ RABADAN, JAIMESISTEMAS",SISTEMAS,64,7.8
-"Lopez Rodriguez, Claudia AlejandraElectronica",Electronica,70,8.0
-"lopez rojas, arieladministrativo",administrativo,50,9.4
-"Lopez Ruiz, Gabriela de JesúsTecnolgías para la Web",Tecnolgías para la Web,50,3.9
-"Lopez Sanchez, Jose ManuelMatematicas/ISC",Matematicas/ISC,16,8.9
-"Lopez Sánchez, José ManuelESCOM-IPN",ESCOM-IPN,2,8.0
-"Loyola Espinoza, AraceliBásicas",Básicas,6,9.3
-"Lucio Peña, Perla CeciliaBasicas",Basicas,0,
+"Kolesnikova, Olga",BASICAS,46,9.7
+"lares, araceli",ramiro arrieta herrera,0,
+"Lares, Isidra Araceli",Primaria Profr. Ramiro Arrieta Herrera,1,10.0
+"Lazcano Xoxotla, Laura",Ciencias sociales,3,10.0
+"Lazcano Xoxotla, Laura",sociales,49,6.8
+"Leal Pacheco, Rene",Matemáticas,1,10.0
+"LEDEZMA, ADALBERTO",BASICAS,4,4.5
+"Leon Hernandez, Miguel Abel (mandrake)",vectorial,4,5.5
+"Levario Medina, Sergio",Matematicas,14,7.6
+"León Hernández, Miguel Abel",Ciencias Basicas,78,7.1
+"Linares Vallejo, Erick Eugenio",ISC,61,6.2
+"LOPEZ LEIVA, lUIS OCTAVIO",ELECTRONICA,33,7.0
+"LOPEZ RABADAN, JAIME",SISTEMAS,64,7.8
+"Lopez Rodriguez, Claudia Alejandra",Electronica,70,8.0
+"lopez rojas, ariel",administrativo,50,9.4
+"Lopez Ruiz, Gabriela de Jesús",Tecnolgías para la Web,50,3.9
+"Lopez Sanchez, Jose Manuel",Matematicas/ISC,16,8.9
+"Lopez Sánchez, José Manuel",ESCOM-IPN,2,8.0
+"Loyola Espinoza, Araceli",Básicas,6,9.3
+"Lucio Peña, Perla Cecilia",Basicas,0,
 "Luna Benoso, Benjamín",,87,8.2
 "luna bravo, olga lilia",,0,
-"López Carrera, BenjaminMaterias Basícas",Materias Basícas,61,6.4
-"López Gómez, AlejandroCiencia de datos",Ciencia de datos,1,5.0
-"Macias Perez, Francisco JavierProgramación",Programación,8,8.5
+"López Carrera, Benjamin",Materias Basícas,61,6.4
+"López Gómez, Alejandro",Ciencia de datos,1,5.0
+"Macias Perez, Francisco Javier",Programación,8,8.5
 "Maldonado Castillo, Idalia",,96,7.8
-"Maldonado Muñoz, Miguel AngelFundamentos Economicos",Fundamentos Economicos,34,8.3
-"Mandujano, José RobertoBásicas",Básicas,44,5.2
-"Manzanilla Granados, Hector ManuelBasicas",Basicas,101,5.8
-"Manzanilla, Hector ManuelGranados",Granados,18,4.4
-"Marin Mota, Luis AlfonsoSistemas",Sistemas,8,4.1
-"Marquez Arreguin, GuillermoSociales",Sociales,32,7.5
-"Marron Tenorio, Marco AntonioRedes",Redes,6,9.2
-"Martines Rosales, RicardoRedes de computadoras",Redes de computadoras,19,8.1
-"Martinez Acosta, LilianCiencias Sociales",Ciencias Sociales,72,7.1
-"Martinez Garcia, Cesar RomanEcuaciones Diferenciales",Ecuaciones Diferenciales,52,8.9
-"MARTINEZ GUERRERO, JOSE ALFREDOCircuitos electricos",Circuitos electricos,1,9.0
-"MARTINEZ NUÑO, JESUS ALFREDOCIENCIAS BASICAS",CIENCIAS BASICAS,56,6.0
-"Martinez Perales, Jose CruzSociales",Sociales,37,7.4
-"Martínez Díaz, Juan CarlosElectrónica",Electrónica,58,7.1
-"Martínez Guerrero, José AlfredoAnalisis de Curcuitos",Analisis de Curcuitos,74,6.1
-"MATA GIL PATRICIA, PATRICIAFinanzas",Finanzas,1,8.0
-"Mata Gil, PatriciaFinanzas",Finanzas,1,8.0
-"Mejia Medina, VijiniaSociales",Sociales,51,9.4
-"Melara Abarca, Reyna EliaSistemas",Sistemas,59,6.9
+"Maldonado Muñoz, Miguel Angel",Fundamentos Economicos,34,8.3
+"Mandujano, José Roberto",Básicas,44,5.2
+"Manzanilla Granados, Hector Manuel",Basicas,101,5.8
+"Manzanilla, Hector Manuel",Granados,18,4.4
+"Marin Mota, Luis Alfonso",Sistemas,8,4.1
+"Marquez Arreguin, Guillermo",Sociales,32,7.5
+"Marron Tenorio, Marco Antonio",Redes,6,9.2
+"Martines Rosales, Ricardo",Redes de computadoras,19,8.1
+"Martinez Acosta, Lilian",Ciencias Sociales,72,7.1
+"Martinez Garcia, Cesar Roman",Ecuaciones Diferenciales,52,8.9
+"MARTINEZ GUERRERO, JOSE ALFREDO",Circuitos electricos,1,9.0
+"MARTINEZ NUÑO, JESUS ALFREDO",CIENCIAS BASICAS,56,6.0
+"Martinez Perales, Jose Cruz",Sociales,37,7.4
+"Martínez Díaz, Juan Carlos",Electrónica,58,7.1
+"Martínez Guerrero, José Alfredo",Analisis de Curcuitos,74,6.1
+"MATA GIL PATRICIA, PATRICIA",Finanzas,1,8.0
+"Mata Gil, Patricia",Finanzas,1,8.0
+"Mejia Medina, Vijinia",Sociales,51,9.4
+"Melara Abarca, Reyna Elia",Sistemas,59,6.9
 "Melo Diaz, Mayte Guadalupe",,21,7.9
-"Mendez Segundo, LauraSistemas",Sistemas,44,6.5
-"MENDOZA MACIAS, ELBASociales",Sociales,38,8.8
-"mendoza, elbaproyectos estrategicos",proyectos estrategicos,5,7.8
+"Mendez Segundo, Laura",Sistemas,44,6.5
+"MENDOZA MACIAS, ELBA",Sociales,38,8.8
+"mendoza, elba",proyectos estrategicos,5,7.8
 "Meneses Viveros, Amilcar",,11,7.7
-"Miguel Pilar, ZelínMatemáticas",Matemáticas,36,6.5
-"Montes Casiano, Hermes FranciscoISC",ISC,27,6.4
-"MONTES MEZA, ADBEL ANAHISISTEMAS DIGITALES",SISTEMAS DIGITALES,5,4.6
-"Montes, Abdeh AnahiMeza",Meza,1,2.0
-"Montiel Pérez, Jesus YaljáEstructura de Datos",Estructura de Datos,9,7.8
-"Montiel Sanchez, Angel SalvadorCiencias Básicas",Ciencias Básicas,67,7.3
-"Montiel, aBasica",Basica,24,7.6
-"Morales Cruz, Juan CarlosElectronica",Electronica,51,7.5
+"Miguel Pilar, Zelín",Matemáticas,36,6.5
+"Montes Casiano, Hermes Francisco",ISC,27,6.4
+"MONTES MEZA, ADBEL ANAHI",SISTEMAS DIGITALES,5,4.6
+"Montes, Abdeh Anahi",Meza,1,2.0
+"Montiel Pérez, Jesus Yaljá",Estructura de Datos,9,7.8
+"Montiel Sanchez, Angel Salvador",Ciencias Básicas,67,7.3
+"Montiel, a",Basica,24,7.6
+"Morales Cruz, Juan Carlos",Electronica,51,7.5
 "MORALES GUITRON, SANDRA LUZ",,25,5.1
-"MORALES RODRIGUEZ, URSULA SAMANTHAESCOM",ESCOM,14,6.1
-"Morales Valencia, Rafael EnriqueBásicas",Básicas,1,7.0
-"Morales, AngelGonzalez",Gonzalez,44,6.6
-"Morales, SandraSistemas",Sistemas,1,2.0
-"Moreno Armendariz, Marco AntonioOptativas",Optativas,18,7.2
-"Moreno Cervantes, Axel ErnestoSistemas",Sistemas,69,9.3
-"MORENO GALVAN, ELIZABETHSistemas",Sistemas,18,8.3
-"Moreno Peña, VictorTodo",Todo,16,2.6
-"MOSCOSO MALAGON, YOSAFATBasica",Basica,67,6.9
-"Mosso García, Ivan GiovannyBásicas",Básicas,100,8.3
-"Muñoz Cruz, Clelia AnyolinaEsc Primaria Antonio Quevedo Caro",Esc Primaria Antonio Quevedo Caro,0,
-"Muñoz Cruz, VerónicaEsc CTM",Esc CTM,0,
-"Muñoz González, Laura ElizethDocente primaria",Docente primaria,0,
-"Muñoz Salazar, LauraBASICAS",BASICAS,65,7.8
-"Márquez Gómez, Gabrielcelex azcapotzalco",celex azcapotzalco,1,2.0
-"Méndez Cuautitla, Reyna SaloméCELEX ESCOM",CELEX ESCOM,3,8.0
+"MORALES RODRIGUEZ, URSULA SAMANTHA",ESCOM,14,6.1
+"Morales Valencia, Rafael Enrique",Básicas,1,7.0
+"Morales, Angel",Gonzalez,44,6.6
+"Morales, Sandra",Sistemas,1,2.0
+"Moreno Armendariz, Marco Antonio",Optativas,18,7.2
+"Moreno Cervantes, Axel Ernesto",Sistemas,69,9.3
+"MORENO GALVAN, ELIZABETH",Sistemas,18,8.3
+"Moreno Peña, Victor",Todo,16,2.6
+"MOSCOSO MALAGON, YOSAFAT",Basica,67,6.9
+"Mosso García, Ivan Giovanny",Básicas,100,8.3
+"Muñoz Cruz, Clelia Anyolina",Esc Primaria Antonio Quevedo Caro,0,
+"Muñoz Cruz, Verónica",Esc CTM,0,
+"Muñoz González, Laura Elizeth",Docente primaria,0,
+"Muñoz Salazar, Laura",BASICAS,65,7.8
+"Márquez Gómez, Gabriel",celex azcapotzalco,1,2.0
+"Méndez Cuautitla, Reyna Salomé",CELEX ESCOM,3,8.0
 "Mújica Ascencio, César",,57,5.5
-"Nava Lara, JoelMatematicas",Matematicas,23,8.4
-"NIETO, ISRAELISIDORO",ISIDORO,0,
-"Nájera Ramírez, Luis RodolfoFichas",Fichas,4,7.3
+"Nava Lara, Joel",Matematicas,23,8.4
+"NIETO, ISRAEL",ISIDORO,0,
+"Nájera Ramírez, Luis Rodolfo",Fichas,4,7.3
 "OCAMPO BOTELLO, FABIOLA",,49,6.6
-"OCOTITLA ROJAS, NANCYSistemas",Sistemas,6,4.0
-"Ocotitla Rojas, NancyProgramación",Programación,109,5.0
-"OJEDA GUILLEN, DIDIERBasicas",Basicas,57,9.2
-"Ojeda Santillán, RodrigoRedes",Redes,8,3.6
-"Olalde Mogollan, NormaSociales",Sociales,3,9.3
-"Olivares Ceja, Jesús ManuelAPPLICATION DEVELOPMENT FOR MOBILE DEVICES",APPLICATION DEVELOPMENT FOR MOBILE DEVICES,7,6.0
-"Olvera Aldana, MiguelMatemáticas",Matemáticas,90,8.8
-"Olvera Aldana, Miguel angelCiencias Basicas",Ciencias Basicas,7,7.9
-"Ortega Gonzalez, JeanCiencias Sociales",Ciencias Sociales,1,9.0
-"Ortega Gonzalez, RubenInstrumentacion",Instrumentacion,26,8.1
-"Ortega Pacheco, DavidSistemas",Sistemas,40,6.1
-"Ortega, RubénGonzales",Gonzales,0,
-"Ortigoza Campos, AndresISV",ISV,27,8.3
-"ORTIZ RAMIREZ, JOSE ANTONIOSISTEMAS",SISTEMAS,40,8.7
-"Ortuno Araujo, JesusAnálisis vectorial",Análisis vectorial,2,4.0
-"Ortuño Araujo, JesúsCientífica-básica",Científica-básica,104,8.2
-"Pacheco, CristianBásicas",Básicas,2,8.0
-"PACHUCA HERRERA, YANIRAESCOM/ Matematicas",ESCOM/ Matematicas,1,8.0
-"Pachuca Herrera, YaniraMatemáticas",Matemáticas,10,8.5
-"Pachucha Herrera, YaniraESCOM-IPN",ESCOM-IPN,1,9.0
-"Palma Fermin, Jesus SergioBasicas",Basicas,7,3.3
-"Palma Orozco, RosauraSistemas",Sistemas,23,7.6
+"Ocotitla Rojas, Nancy",Programación,109,5.0
+"OCOTITLA ROJAS, NANCY",Sistemas,6,4.0
+"OJEDA GUILLEN, DIDIER",Basicas,57,9.2
+"Ojeda Santillán, Rodrigo",Redes,8,3.6
+"Olalde Mogollan, Norma",Sociales,3,9.3
+"Olivares Ceja, Jesús Manuel",APPLICATION DEVELOPMENT FOR MOBILE DEVICES,7,6.0
+"Olvera Aldana, Miguel",Matemáticas,90,8.8
+"Olvera Aldana, Miguel angel",Ciencias Basicas,7,7.9
+"Ortega Gonzalez, Jean",Ciencias Sociales,1,9.0
+"Ortega Gonzalez, Ruben",Instrumentacion,26,8.1
+"Ortega Pacheco, David",Sistemas,40,6.1
+"Ortega, Rubén",Gonzales,0,
+"Ortigoza Campos, Andres",ISV,27,8.3
+"ORTIZ RAMIREZ, JOSE ANTONIO",SISTEMAS,40,8.7
+"Ortuno Araujo, Jesus",Análisis vectorial,2,4.0
+"Ortuño Araujo, Jesús",Científica-básica,104,8.2
+"Pacheco, Cristian",Básicas,2,8.0
+"PACHUCA HERRERA, YANIRA",ESCOM/ Matematicas,1,8.0
+"Pachuca Herrera, Yanira",Matemáticas,10,8.5
+"Pachucha Herrera, Yanira",ESCOM-IPN,1,9.0
+"Palma Fermin, Jesus Sergio",Basicas,7,3.3
+"Palma Orozco, Rosaura",Sistemas,23,7.6
 "palos macias, maria de lourdes",,0,
-"Paredes Cadena, Myriam NoemiESCOM",ESCOM,13,6.8
+"Paredes Cadena, Myriam Noemi",ESCOM,13,6.8
 "Paredo Valderrama, Ruben",,12,7.5
-"Pastrana Fernandez, Carlos JesúsProgramación",Programación,22,4.6
-"PAZ, HECTORELECTRONICA",ELECTRONICA,19,6.4
-"PEREDO VALDERRAMA, RubenTecnologias para la web",Tecnologias para la web,50,5.9
-"Perez Beltran, AngelicaCELEX ESCOM",CELEX ESCOM,2,8.0
-"Perez de los santos, Mondragon TanibetSistemas",Sistemas,48,5.4
-"Perez Hernandez, Maria del Pilar MonserratCiencias sociales",Ciencias sociales,1,8.0
-"Perez Vera, MonserratCoe",Coe,34,9.6
-"Perez, AngelicaBeltran",Beltran,1,7.0
-"Perla Rebeca, Sanchez VargasMatemáticas",Matemáticas,27,7.5
-"Peréz Vera, Sandra MercedesCiencias Sociales",Ciencias Sociales,27,8.7
-"Pescador Rojas, MiriamProgramación",Programación,72,7.4
-"Peña velazquez, Olga luzSep",Sep,0,
-"Pineda Guerrero, CarlosISC",ISC,30,7.8
-"puebla lomas, jaime hugoredes",redes,41,6.3
-"Pérez Pérez, JuanElectronica",Electronica,40,5.4
-"Quiroz Fernandez, LeticiaSociales",Sociales,4,9.8
-"Ramirez Morales, Mario A.Sistemas",Sistemas,39,8.4
-"RAMIREZ ROMERO, TONAHTIU ARTUROSistemas",Sistemas,53,7.2
+"Pastrana Fernandez, Carlos Jesús",Programación,22,4.6
+"PAZ, HECTOR",ELECTRONICA,19,6.4
+"PEREDO VALDERRAMA, Ruben",Tecnologias para la web,50,5.9
+"Perez Beltran, Angelica",CELEX ESCOM,2,8.0
+"Perez de los santos, Mondragon Tanibet",Sistemas,48,5.4
+"Perez Hernandez, Maria del Pilar Monserrat",Ciencias sociales,1,8.0
+"Perez Vera, Monserrat",Coe,34,9.6
+"Perez, Angelica",Beltran,1,7.0
+"Perla Rebeca, Sanchez Vargas",Matemáticas,27,7.5
+"Peréz Vera, Sandra Mercedes",Ciencias Sociales,27,8.7
+"Pescador Rojas, Miriam",Programación,72,7.4
+"Peña velazquez, Olga luz",Sep,0,
+"Pineda Guerrero, Carlos",ISC,30,7.8
+"puebla lomas, jaime hugo",redes,41,6.3
+"Pérez Pérez, Juan",Electronica,40,5.4
+"Quiroz Fernandez, Leticia",Sociales,4,9.8
+"Ramirez Morales, Mario A.",Sistemas,39,8.4
+"RAMIREZ ROMERO, TONAHTIU ARTURO",Sistemas,53,7.2
 "Ramirez Tenorio, Rafael",,36,5.7
-"Ramirez, Mario AugustoProgramacion",Programacion,9,7.7
-"Ramírez Martínez, Elia TzindejhéBásicas",Básicas,1,10.0
-"Ramírez Mosqueda, Jose LuisCELEX ESCOM",CELEX ESCOM,1,7.0
-"Ramírez. Hernández, J. JesusSecundaria",Secundaria,0,
-"RANGEL GONZALEZ, JOSUESistemas",Sistemas,47,7.2
-"Rangel Guzman, Alfredobasicas",basicas,99,6.8
-"Rangel Nahum, Carlos AlexisProcesos Estocásticos",Procesos Estocásticos,1,10.0
-"Remirez Guzman, Alicia MarcelaSociales",Sociales,1,10.0
-"Resendiz Muñoz, RocioProgramación",Programación,61,5.8
-"Reséndiz, Jose manuelSecundaria",Secundaria,1,2.0
-"Revilla Caro, Javier AlejandroCELEX ESCOM",CELEX ESCOM,3,8.0
-"REYES BERMEJO, TLATOANI DE JESUSMatematicas Discretas",Matematicas Discretas,119,6.3
-"REYES VALENZUELA, ALEJANDROBASICAS",BASICAS,2,2.0
-"Reyes, MinaInglés",Inglés,4,9.8
-"RIOS DE LA TORRE, IGNACIOMATEMATICAS",MATEMATICAS,86,6.5
-"Rivera de la Rosa, MónicaSistemas",Sistemas,20,5.5
-"Rivera Ponce, Erik EnriqueESCOM",ESCOM,0,
-"Robles Manzano, Juan CarlosContaduría y Administración",Contaduría y Administración,0,
+"Ramirez, Mario Augusto",Programacion,9,7.7
+"Ramírez Martínez, Elia Tzindejhé",Básicas,1,10.0
+"Ramírez Mosqueda, Jose Luis",CELEX ESCOM,1,7.0
+"Ramírez. Hernández, J. Jesus",Secundaria,0,
+"RANGEL GONZALEZ, JOSUE",Sistemas,47,7.2
+"Rangel Guzman, Alfredo",basicas,99,6.8
+"Rangel Nahum, Carlos Alexis",Procesos Estocásticos,1,10.0
+"Remirez Guzman, Alicia Marcela",Sociales,1,10.0
+"Resendiz Muñoz, Rocio",Programación,61,5.8
+"Reséndiz, Jose manuel",Secundaria,1,2.0
+"Revilla Caro, Javier Alejandro",CELEX ESCOM,3,8.0
+"REYES BERMEJO, TLATOANI DE JESUS",Matematicas Discretas,119,6.3
+"REYES VALENZUELA, ALEJANDRO",BASICAS,2,2.0
+"Reyes, Mina",Inglés,4,9.8
+"RIOS DE LA TORRE, IGNACIO",MATEMATICAS,86,6.5
+"Rivera de la Rosa, Mónica",Sistemas,20,5.5
+"Rivera Ponce, Erik Enrique",ESCOM,0,
+"Robles Manzano, Juan Carlos",Contaduría y Administración,0,
 "ROCHA BERNABE, ROSARIO",,86,7.9
-"RODRIGUEZ FLORES, EDUARDOSociales",Sociales,52,8.8
-"Rodriguez Jordan, Gabriel de JesusCompiladores",Compiladores,7,8.9
-"Rodriguez Ordaz, MarisolAcademia de sociales",Academia de sociales,27,6.6
-"RODRIGUEZ SARABIA, TANIABases de datos",Bases de datos,24,5.2
-"Rodríguez Castillo, Miguel ÁngelProgramación",Programación,32,8.9
-"Rodríguez, José GregorioCiencias Básicas",Ciencias Básicas,3,9.3
-"Rojas Luna, HectorMatematicas",Matematicas,66,8.0
-"Rojas Mexicano, IsmaelNi el sabe",Ni el sabe,14,6.0
-"romero herrera, rodolfoElectronica",Electronica,23,6.0
-"Romero Herrera, RodolfoAnálisis fundamental de circuitos",Análisis fundamental de circuitos,0,
-"Romero Rodríguez, WendyAuxiliar",Auxiliar,0,
-"Rosales Bautista 2da oportunid, Sandra IvetteISC",ISC,1,4.0
-"Rosas Castillo, Ary SharedSistemas",Sistemas,2,9.5
+"RODRIGUEZ FLORES, EDUARDO",Sociales,52,8.8
+"Rodriguez Jordan, Gabriel de Jesus",Compiladores,7,8.9
+"Rodriguez Ordaz, Marisol",Academia de sociales,27,6.6
+"RODRIGUEZ SARABIA, TANIA",Bases de datos,24,5.2
+"Rodríguez Castillo, Miguel Ángel",Programación,32,8.9
+"Rodríguez, José Gregorio",Ciencias Básicas,3,9.3
+"Rojas Luna, Hector",Matematicas,66,8.0
+"Rojas Mexicano, Ismael",Ni el sabe,14,6.0
+"romero herrera, rodolfo",Electronica,23,6.0
+"Romero Herrera, Rodolfo",Análisis fundamental de circuitos,0,
+"Romero Rodríguez, Wendy",Auxiliar,0,
+"Rosales Bautista 2da oportunid, Sandra Ivette",ISC,1,4.0
+"Rosas Castillo, Ary Shared",Sistemas,2,9.5
 "RUEDA MELENDEZ, MARCO ANTONIO",,52,7.2
-"Rueda Meléndez, José Marco AntonioFundamentos de Programación",Fundamentos de Programación,0,
-"Ruiz Lopez, gabriela de jesussistemas",sistemas,25,3.7
-"Ruíz Ledesma, Elena FabiolaCiencias Básicas",Ciencias Básicas,50,7.4
-"Salas Ramirez, IsraelSociales",Sociales,2,7.0
-"Salas, IsraelSistemas",Sistemas,7,6.3
+"Rueda Meléndez, José Marco Antonio",Fundamentos de Programación,0,
+"Ruiz Lopez, gabriela de jesus",sistemas,25,3.7
+"Ruíz Ledesma, Elena Fabiola",Ciencias Básicas,50,7.4
+"Salas Ramirez, Israel",Sociales,2,7.0
+"Salas, Israel",Sistemas,7,6.3
 "Salazar Ramirez, Manuel",,53,7.7
-"Salazar, ManuelRamirez",Ramirez,3,6.7
-"Saldivar Almorejo, María MagdalenaSociales",Sociales,1,2.0
-"Salinas Hernandez, EncarnacionAlgebralineal",Algebralineal,2,4.0
+"Salazar, Manuel",Ramirez,3,6.7
+"Saldivar Almorejo, María Magdalena",Sociales,1,2.0
+"Salinas Hernandez, Encarnacion",Algebralineal,2,4.0
 "salinas hernandez, encarnacion",,78,6.6
-"Salinas Hernandez, EncarnaciónÁlgebra lineal",Álgebra lineal,1,2.0
-"Salinas lugo, Sergiosistemas",sistemas,42,6.7
-"Salinas, AlfredoCELEX-ESCOM",CELEX-ESCOM,2,10.0
-"SANCHEZ AGUILAR, ALFONSOMatemáticas",Matemáticas,3,8.0
+"Salinas Hernandez, Encarnación",Álgebra lineal,1,2.0
+"Salinas lugo, Sergio",sistemas,42,6.7
+"Salinas, Alfredo",CELEX-ESCOM,2,10.0
+"SANCHEZ AGUILAR, ALFONSO",Matemáticas,3,8.0
 "SANCHEZ CRUZ, VIRGINIA",,55,6.0
-"Sanchez García, Luz MariaISC",ISC,61,7.5
-"Sanchez García, OctavioInteligencia Artificial",Inteligencia Artificial,3,4.3
-"SANCHEZ GARFIAS, FLAVIO ARTUROSISTEMAS",SISTEMAS,12,7.8
-"SANCHEZ JUARES, JOSEPROGRAMACION",PROGRAMACION,14,7.4
-"Sanchez Mendoza, IsraelBasicas",Basicas,1,10.0
-"Sanchez Moreno, AdrianaCiencias Sociales",Ciencias Sociales,46,9.3
+"Sanchez García, Luz Maria",ISC,61,7.5
+"Sanchez García, Octavio",Inteligencia Artificial,3,4.3
+"SANCHEZ GARFIAS, FLAVIO ARTURO",SISTEMAS,12,7.8
+"SANCHEZ JUARES, JOSE",PROGRAMACION,14,7.4
+"Sanchez Mendoza, Israel",Basicas,1,10.0
+"Sanchez Moreno, Adriana",Ciencias Sociales,46,9.3
 "Sanchez Quintanilla, Gilberto",,46,6.2
-"Sanchéz Lopez, Luis TadeoBasicas",Basicas,5,4.0
-"Sannchez Quintanilla, GilbertoRedes de computadoras",Redes de computadoras,0,
-"Santiago Valentin, EricMatematicas Discretas",Matematicas Discretas,7,10.0
-"Santillán Luna, RaulPOO",POO,71,7.6
+"Sanchéz Lopez, Luis Tadeo",Basicas,5,4.0
+"Sannchez Quintanilla, Gilberto",Redes de computadoras,0,
+"Santiago Valentin, Eric",Matematicas Discretas,7,10.0
+"Santillán Luna, Raul",POO,71,7.6
 "Santos Silva, Roberto Alejandro",,2,8.5
-"Saucedo, Rafael NormanDelgado",Delgado,78,7.7
-"SERRANO TALAMANTES, J. FELIXSISTEMAS",SISTEMAS,22,6.3
-"Silva Garcia, Victor ManuelBasicas",Basicas,24,8.5
-"Silva Martínez, Jorge JavierEcuaciones diferenciales",Ecuaciones diferenciales,115,9.4
-"Silva, CarlosISC",ISC,5,6.4
-"sin, asignartodas",todas,12,7.8
-"Solano Palacios, RocíoIt Governance",It Governance,14,7.4
-"Solorza Guzman, MisaelFisica y Calculo",Fisica y Calculo,87,3.9
-"Solorza Guzmán, MisaelCálculo",Cálculo,0,
-"SOSA SABEDRA, JULIO CESARELECTRONICA",ELECTRONICA,14,7.6
-"SOTO RAMOS, MANUEL ALEJANDROSistemas",Sistemas,67,7.2
-"Suárez Castañon, Miguel SantiagoIPN",IPN,2,7.5
-"SUÁREZ CASTAÑÓN, MIGUEL SANTIAGOProgramación",Programación,95,7.5
-"Sánchez Arroyo, José EmilioSociales",Sociales,9,3.0
-"Sánchez Brito, MiguelProgramación",Programación,8,5.1
-"Sánchez Brito, MiguelIPN ESCOM",IPN ESCOM,1,7.0
-"Sánchez Juárez, JoséComputación",Computación,3,7.7
-"Sánchez Palacios, María SusanaCiencias Básicas",Ciencias Básicas,30,5.1
-"Sánchez Vargas, Perla RebecaCiencias Básicas",Ciencias Básicas,11,9.4
-"Sánchez Vélez, RicardoÁlgebra lineal",Álgebra lineal,11,5.2
-"Tecla Pada, DobedEscom/Sistemas",Escom/Sistemas,5,6.2
-"Tecla Parra, RobertoProgramacion",Programacion,102,7.3
-"Tellez Aguilar, Juan CarlosElectronica",Electronica,7,4.0
-"Tellez Barrera, Juan CarlosElectrónica análoga",Electrónica análoga,2,10.0
-"Tellez Reyes, Maria del SocorroHumanisticas",Humanisticas,8,9.5
-"Testa Navas, Alexissistemas digitales",sistemas digitales,17,5.9
-"Tirado Lule, Judith MargaritaBásicas",Básicas,68,8.4
-"toala castillo, marthamaestra de kinder",maestra de kinder,0,
+"Saucedo, Rafael Norman",Delgado,78,7.7
+"SERRANO TALAMANTES, J. FELIX",SISTEMAS,22,6.3
+"Silva Garcia, Victor Manuel",Basicas,24,8.5
+"Silva Martínez, Jorge Javier",Ecuaciones diferenciales,115,9.4
+"Silva, Carlos",ISC,5,6.4
+"sin, asignar",todas,12,7.8
+"Solano Palacios, Rocío",It Governance,14,7.4
+"Solorza Guzman, Misael",Fisica y Calculo,87,3.9
+"Solorza Guzmán, Misael",Cálculo,0,
+"SOSA SABEDRA, JULIO CESAR",ELECTRONICA,14,7.6
+"SOTO RAMOS, MANUEL ALEJANDRO",Sistemas,67,7.2
+"Suárez Castañon, Miguel Santiago",IPN,2,7.5
+"SUÁREZ CASTAÑÓN, MIGUEL SANTIAGO",Programación,95,7.5
+"Sánchez Arroyo, José Emilio",Sociales,9,3.0
+"Sánchez Brito, Miguel",IPN ESCOM,1,7.0
+"Sánchez Brito, Miguel",Programación,8,5.1
+"Sánchez Juárez, José",Computación,3,7.7
+"Sánchez Palacios, María Susana",Ciencias Básicas,30,5.1
+"Sánchez Vargas, Perla Rebeca",Ciencias Básicas,11,9.4
+"Sánchez Vélez, Ricardo",Álgebra lineal,11,5.2
+"Tecla Pada, Dobed",Escom/Sistemas,5,6.2
+"Tecla Parra, Roberto",Programacion,102,7.3
+"Tellez Aguilar, Juan Carlos",Electronica,7,4.0
+"Tellez Barrera, Juan Carlos",Electrónica análoga,2,10.0
+"Tellez Reyes, Maria del Socorro",Humanisticas,8,9.5
+"Testa Navas, Alexis",sistemas digitales,18,5.7
+"Tirado Lule, Judith Margarita",Básicas,68,8.4
+"toala castillo, martha",maestra de kinder,0,
 "TORRES GONZALEZ, ENRIQUE",,66,7.0
 "TORRES MANRIQUEZ, JUAN JOSE",,41,7.2
 "Trigueros, Rosas",,40,9.1
-"Téllez Barrera, Juan CarlosElectrónica",Electrónica,26,8.3
-"Uriarte Arcia, Abril Valeria-",-,7,8.7
-"Valencia, MIguelMatemáticas",Matemáticas,1,9.0
-"Vazquez Arreguin, RobertoBASICAS",BASICAS,47,6.8
-"Vazquez Gonzalez, LeonorBasicas",Basicas,18,8.1
-"Vazquez Ortiz, MijailCircuitos",Circuitos,9,7.8
-"Vega García, NayeliDigitales",Digitales,34,8.5
-"Vega García, NayeliSistemas Digitales",Sistemas Digitales,45,7.8
+"Téllez Barrera, Juan Carlos",Electrónica,26,8.3
+"Uriarte Arcia, Abril Valeria",-,7,8.7
+"Valencia, MIguel",Matemáticas,1,9.0
+"Vazquez Arreguin, Roberto",BASICAS,47,6.8
+"Vazquez Gonzalez, Leonor",Basicas,18,8.1
+"Vazquez Ortiz, Mijail",Circuitos,9,7.8
+"Vega García, Nayeli",Sistemas Digitales,45,7.8
+"Vega García, Nayeli",Digitales,34,8.5
 "velez resendiz, juan manuel",,2,10.0
-"velez salda, ulisesproyectos externos",proyectos externos,1,9.0
-"Velez Saldaña, UlisesProyectos externos",Proyectos externos,63,6.0
-"Vera Hernández, GumersindoCiencias Sociales",Ciencias Sociales,37,8.0
-"Vera Romero, JuanSociales",Sociales,12,7.3
-"Villegas Navarrete, SoniaSociales",Sociales,33,8.3
-"Viveros Vela, KarinaMatemáticas",Matemáticas,71,8.2
-"Viveros Vela, KarinaSistemas",Sistemas,0,
-"Vásquez Gómez, Juan IrvingIA",IA,4,9.8
-"Vásquez ortíz, MijailEscom",Escom,0,
-"Vázquez Ortíz, MijailElectrónica",Electrónica,36,7.6
-"White, PeterCELEX - ESCOM",CELEX - ESCOM,2,10.0
+"velez salda, ulises",proyectos externos,1,9.0
+"Velez Saldaña, Ulises",Proyectos externos,63,6.0
+"Vera Hernández, Gumersindo",Ciencias Sociales,37,8.0
+"Vera Romero, Juan",Sociales,12,7.3
+"Villegas Navarrete, Sonia",Sociales,33,8.3
+"Viveros Vela, Karina",Matemáticas,71,8.2
+"Viveros Vela, Karina",Sistemas,0,
+"Vásquez Gómez, Juan Irving",IA,4,9.8
+"Vásquez ortíz, Mijail",Escom,0,
+"Vázquez Ortíz, Mijail",Electrónica,36,7.6
+"White, Peter",CELEX - ESCOM,2,10.0
 "WINFIELD REYES, ANA MARIA",,46,7.3
-"Y, YY",Y,0,
-"Yllanes Mejía, BernardoSociales",Sociales,12,9.1
-"Young Oh, DaeTaller de Coreano",Taller de Coreano,2,10.0
-"ZAGAL FLORES, ROBERTO ESWARTSistemas",Sistemas,56,7.9
-"Zarate Cardenas, AlejandroMatemáticas",Matemáticas,22,7.2
-"ZEKKOUR ZEKKOUR AHMED, AHMEDredes",redes,2,2.0
-"Ávila-Sánchez, ChristianCiencias Básicas",Ciencias Básicas,35,8.1
+"Y, Y",Y,0,
+"Yllanes Mejía, Bernardo",Sociales,12,9.1
+"Young Oh, Dae",Taller de Coreano,2,10.0
+"ZAGAL FLORES, ROBERTO ESWART",Sistemas,56,7.9
+"Zarate Cardenas, Alejandro",Matemáticas,22,7.2
+"ZEKKOUR ZEKKOUR AHMED, AHMED",redes,2,2.0
+"Ávila-Sánchez, Christian",Ciencias Básicas,35,8.1

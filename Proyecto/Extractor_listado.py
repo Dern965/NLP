@@ -28,7 +28,7 @@ def main():
     for row in rows:
         cols = row.find_all('td')
         if len(cols) >= 4:
-            nombre = cols[2].get_text(strip=True) #Nombre del profesor, el 2 es el nombre el 1 es el enlace
+            nombre = cols[1].get_text(strip=True) #Nombre del profesor, el 2 es el nombre el 1 es el enlace
             departamento = cols[3].get_text(strip=True) #Departamento
             calificaciones = cols[4].get_text(strip=True) #Calificaciones
             promedio = cols[5].get_text(strip = True)#Promedio

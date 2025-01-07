@@ -1,98 +1,142 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from bs4 import BeautifulSoup
 import pandas as pd
-import time
+from transformers import pipeline
 
-def obtener_comentarios(driver, url):
-    driver.get(url)
-    time.sleep(5)
+comentarios = pd.read_csv('Proyecto/CSV/Comentarios_Profesores_Generalizado.csv')
+listado = pd.read_csv('Proyecto\CSV\Listado_profesores_Generalizado.csv')
+try:
+    # modelo_beto = pipeline("text-generation", model="bigscience/bloomz-560m")
+    modelo_resumen = pipeline("summarization", model="facebook/bart-large-cnn") 
+    # modelo_resumen = pipeline("summarization", model="t5-small")
+    print("Modelo cargado exitosamente.")
+except Exception as e:
+    print("Error cargando el modelo:", e)
+    #modelo_beto = None
+    modelo_resumen = None
 
-    comentarios = []
-    clases = {'score bueno', 'score regular', 'score malo'}
+def listado_profesores():
+    print("Listado de profesores:")
+    #Obtenemos el listado
+    profesores_unicos = comentarios['Profesor'].unique()
+    for index, profesor in enumerate(profesores_unicos):
+        print(f"\t{index + 1}. {profesor}")
 
-    while True:
-        html = driver.page_source
-        soup = BeautifulSoup(html, 'html.parser')
-        tbody = soup.find('tbody')
-        if not tbody:
-            print(f"No se encontraron comentarios en la página: {url}")
-            break
-
-        rows = tbody.find_all('tr')
-        profesor_tag = soup.find('h2')
-        profesor = profesor_tag.get_text(strip=True) if profesor_tag else "Desconocido"
-
-        for row in rows:
-            try:
-                fecha = row.find('div', class_='date').get_text(strip=True)
-                calificacion = row.find('span', class_='rating-type').get_text(strip=True)
-
-                # Validar la lista antes de acceder a ella
-                calidad_general_span = row.find_all('span', class_=clases)
-                calidad_general = calidad_general_span[0].get_text(strip=True) if len(calidad_general_span) > 0 else 'N/A'
-                facilidad = calidad_general_span[1].get_text(strip=True) if len(calidad_general_span) > 1 else 'N/A'
-
-                clase = row.find('span', class_='name').get_text(strip=True) if row.find('span', class_='name') else 'N/A'
-                asistencia = row.find('span', class_='attendance').find('span', class_='response').get_text(strip=True) if row.find('span', class_='attendance') else 'N/A'
-                calificacion_recibida = row.find('span', class_='grade').find('span', class_='response').get_text(strip=True) if row.find('span', class_='grade') else 'N/A'
-                interes = row.find_all('span', class_='grade')[-1].find('span', class_='response').get_text(strip=True) if row.find_all('span', class_='grade') else 'N/A'
-                comentario = row.find('p', class_='commentsParagraph').get_text(strip=True) if row.find('p', class_='commentsParagraph') else 'N/A'
-                util = row.find('a', class_='votar_icon helpful').find('span', class_='count').get_text(strip=True) if row.find('a', class_='votar_icon helpful') else '0'
-                inutil = row.find('a', class_='votar_icon nothelpful').find('span', class_='count').get_text(strip=True) if row.find('a', class_='votar_icon nothelpful') else '0'
-
-                comentarios.append({
-                    'Profesor': profesor,
-                    'Fecha': fecha,
-                    'Calificación': calificacion,
-                    'Calidad General': calidad_general,
-                    'Facilidad': facilidad,
-                    'Clase': clase,
-                    'Asistencia': asistencia,
-                    'Calificación Recibida': calificacion_recibida,
-                    'Interés en la Clase': interes,
-                    'Comentario': comentario,
-                    'Útil': util,
-                    'Inútil': inutil
-                })
-
-            except AttributeError:
-                continue
-
-        # Verificar si hay una página siguiente
-        next_page = soup.find('a', {'aria-label': 'Siguiente'})
-        if next_page and 'href' in next_page.attrs:
-            next_url = next_page['href']
-            driver.get(next_url)
-            time.sleep(5)
+def ver_comentarios(profesores_unicos):
+    try:
+        numero_profesor = int(input('Ingrese el numero del profesor: '))
+        if 1 <= numero_profesor <= len(profesores_unicos):
+            profesor = profesores_unicos[numero_profesor - 1]
+            comentarios_profesor = comentarios[comentarios['Profesor'] == profesor]
+            if comentarios_profesor.empty:
+                print(f"No hay comentarios disponibles para {profesor}.")
+                return
+            print(f"Comentarios del profesor {profesor}:")
+            for index, comentario in comentarios_profesor.iterrows():
+                print(f"\t{index+1}. {comentario['Comentario']}")
         else:
-            break
+            print('Opcion invalida, intente de nuevo')
+    except ValueError:
+        print('Opcion invalida, intente de nuevo')
 
-    return comentarios
 
-def main():
-    service = Service(ChromeDriverManager().install())
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument('--allow-insecure-localhost')
-    driver = webdriver.Chrome(service=service, options=options)
-
-    with open('Proyecto/links2.txt', 'r') as file:
-        urls = [line.strip() for line in file]
+def generar_opinion(profesores_unicos):
     
-    all_comentarios = []
-    for url in urls:
-        print(f'Procesando: {url}')
-        comentarios = obtener_comentarios(driver, url)
-        all_comentarios.extend(comentarios)
+    try:
+        numero_profesor = int(input('Ingrese el numero del profesor: '))
+        if 1 <= numero_profesor <= len(profesores_unicos):
+            profesor = profesores_unicos[numero_profesor - 1]
+            print(f"Generando opinión del profesor {profesor}:")
+            comentarios_profesor = comentarios[comentarios['Profesor'] == profesor]["Comentario"]
+            if comentarios_profesor.empty:
+                print(f"No hay comentarios disponibles para {profesor}.")
+                return
 
-    # Guardar en CSV
-    df = pd.DataFrame(all_comentarios)
-    df.to_csv('Comentarios_Prueba.csv', index=False, encoding='utf-8')
-    print('Datos guardados en Comentarios_Prueba')
+            comentarios_profesor = comentarios_profesor.dropna()  
+            comentarios_profesor = comentarios_profesor.astype(str) 
 
+            if len(comentarios_profesor) <= 4:  
+                print(f"El profesor {profesor} tiene {len(comentarios_profesor)} comentarios. Mostrando todos los comentarios disponibles:")
+                for comentario in comentarios_profesor:
+                    print(f"- {comentario}")
+                return
+            
+            elif 5 <= len(comentarios_profesor) < 9:
+                texto_base = ' '.join(comentarios_profesor.tolist())
+            else:    
+                texto_base = ' '.join(comentarios_profesor.sample(n=9, random_state=37).tolist())
+            
+            print(f"Texto base para generación: {texto_base}")
+
+            if modelo_resumen is None:
+                print("El modelo de resumen no está disponible. Verifica su carga.")
+                return
+            
+            if not texto_base.strip():
+                print("No hay suficiente texto base para generar un resumen.")
+                return
+            
+            try:
+
+                """
+                opinion_generada = modelo_beto(
+                    texto_base, max_new_tokens=50, max_length = 50,num_return_sequences=1, truncation=True
+                )[0]['generated_text']
+                print(f"Opinion generada: {opinion_generada}")
+                
+                opinion_generada = modelo_resumen(
+                    texto_base, max_length=300, min_length=110,truncation=True
+                )[0]['summary_text']
+                print(f"Resumen generado: {opinion_generada}")
+                """
+                # El de arriba es el modelo de t5
+
+                opinion_generada = modelo_resumen(
+                    texto_base, max_length=300, min_length=150, do_sample=False
+                )[0]['summary_text']
+                print("\n############################################\n")
+                print(f"Resumen generado: {opinion_generada}")
+
+            except Exception as e:
+                print("Error generando la opinión:", e)
+        else:
+            print('Opción inválida, intente de nuevo 1')
+    except ValueError:
+        print('Opción inválida, intente de nuevo 2')
+
+def sub_menu():
+    profesores_unicos = comentarios['Profesor'].unique()
+    while True:
+        print('MENU')
+        print('1. Ver comentarios')
+        print('2. Generar opinion')
+        print('3. Salir')
+
+        try:
+            opcion = int(input('Ingrese una opcion: '))
+            if opcion == 1:
+                ver_comentarios(profesores_unicos)
+            elif opcion == 2: 
+                generar_opinion(profesores_unicos)
+            elif opcion == 3:
+                break
+            else:
+                print('Opcion invalida, intente de nuevo')
+        except ValueError:
+            print('Opcion invalida, intente de nuevo')
 if __name__ == '__main__':
-    main()
+    profesores_unicos = comentarios['Profesor'].unique()
+    while True:
+        print('MENU')
+        print('1. Listado de profesores')
+        print('2. Salir')
+
+        try:
+            opcion = int(input('Ingrese una opcion: '))
+            if opcion == 1:
+                listado_profesores()
+                sub_menu()
+            elif opcion == 2:
+                break
+            else:
+                print('Opcion invalida, intente de nuevo')
+        except ValueError:
+            print('Opcion invalida, intente de nuevo')
